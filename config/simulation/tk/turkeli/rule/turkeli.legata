@@ -1,0 +1,39 @@
+# Description:  Istanbul port protocols
+# File:         port.legata
+
+# Convenience macro definitions
+define: {
+    OS: OwnShip,
+    TS: TargetShip
+}
+
+
+condition: {
+    : [OS, Map.Sea@TrafficSeparationScheme].Distance in Area.ProximityRange
+}
+
+
+
+clause['Turkeli.Bosphorous.SpeedLimit']:{
+    : {
+        condition: { 
+            : (OS,TrafficSeparationScheme).Name is 'Turkeli.TSS.SpeedZone1'
+            }
+        assure: { 
+            :OS.Velocity < 0.01           # Slow down
+            }
+    }
+}
+
+
+clause['Turkeli.Bosphorous.DeepDraft']:{
+    : {
+        condition: { 
+            : (OS,TrafficSeparationScheme).Name is 'Turkeli.TSS.SpeedZone1'
+            }
+        assure: { 
+            :OS.Draft < 10            # Deep draft vessels
+            }
+    }
+}
+

@@ -1,0 +1,8 @@
+# Description:  Istanbul port protocols
+# File:         port.legata
+
+# Convenience macro definitions
+define: {
+    OS: OwnShip
+}
+

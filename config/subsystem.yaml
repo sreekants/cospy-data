@@ -1,0 +1,13 @@
+packages:
+  modules:  # Kernel subsystem services
+     - name: NetworkManager
+       module: cos.subsystem.network.NetworkManager
+       config: 
+
+     - name: DataManager
+       module: cos.subsystem.data.DataManager
+       config: storage=$(DB)/data/maritime.workingset.s3db schema=$(CONFIG)/data/maritime.xml rowstart=1000 filter=1000
+
+     - name: World
+       module: cos.subsystem.world.World
+       config: 

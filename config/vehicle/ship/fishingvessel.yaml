@@ -1,0 +1,56 @@
+hydrodynamics:
+    north: 1
+    east: 2
+    yaw: 0 
+    yaw_ref: 45 
+    speed: 5
+    speed_ref: 7
+    yaw_rate: 0
+    dt: 0.0002
+
+# Specification: low momentum (quick to respond), fast heading
+physics:
+    mass: 50000 
+    linear_damping_coeff: 500000000
+    length: 20
+    width: 3
+    draft: 10
+    momentum: 0.10
+    relative_size: "tiny"
+
+activity:
+    type                : "fishing" 
+    activity            : "fishing" 
+
+maneuverability:
+    max_yaw_rate        : 10.0   # degrees per timestep
+    max_speed           : 100    # speed per timestep
+
+behavior:
+    tss_min_dist        : 800.0  # metres; normal separation inside tss
+    tss_angle_tol       : 30.0   # degrees; tolerance before lane correction kicks in
+
+    # overtaking thresholds
+    overtake_lat_min : 55.0   # metres; lateral separation while overtaking
+
+    # crossing thresholds
+    crossing_aft_min    : 50.0   # metres; crossing at aft of tss vessel
+    crossing_fore_min   : 250.0  # metres; crossing in front of approaching tss vessel
+
+    range_visibility    : 100    # range of situations observation
+    range_ample_time    : 50     # range of collision avoidance 
+    range_safety        : 10     # range for safety maneuvers
+
+    stop_on_traffic     : true
+
+# Activity behaviors
+fishing:
+    fishing_aft_dist : 1000.0  # metres; min distance from aft of any vessel while fishing
+
+cargo:
+    humans_present  : 3
+
+devices:
+     - name: RADAR
+       driver: maritime.device.communication.Radar
+       args: sample.frequency=1
