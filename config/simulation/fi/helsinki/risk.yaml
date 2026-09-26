@@ -67,6 +67,19 @@ risk:
     - environmental
     - operational
 
+  # --- Rw: relative weight of the concerns --------------------------------
+  # One weight per concern, keyed on exactly the concerns above; a missing or
+  # unknown key stops the risk examiner at load. Weights are normalised to sum
+  # to 1 before use, so only their ratios matter. Uniform is the deliberate
+  # null: no concern is weighted above another pending an expert consensus
+  # (REQ.004). Rw is recorded in fact_rw and never applied to Rl; R_ev = Ro . Rw . Rl
+  # is composed at rollup.
+  weights:
+    safety: 1.0
+    traffic: 1.0
+    environmental: 1.0
+    operational: 1.0
+
   # Which concern each consequence node of the network scores into. This is
   # the one mapping the source paper does not supply.
   consequences:
@@ -97,7 +110,7 @@ risk:
       minor: 47500            # USD
       none: 0
     mission_failure:
-      "yes": 950              # USD 10 000; quoted, PyYAML reads bare yes/no as booleans
+      "yes": 950              # NOK 10 000; quoted, PyYAML reads bare yes/no as booleans
       "no": 0
 
   # --- Rl proper: how location changes what an outcome is worth -----------
