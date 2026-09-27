@@ -11,14 +11,16 @@ Counts below are measured from the tree, not aspirational.
 
 | | |
 |---|---|
-| Sites | 15 simulated, 16 mapped |
-| Countries | 8 |
-| Map databases | 51 (land · sea · sky per site) |
-| Weather databases | 135 (9 types × 15 sites) |
+| Sites | 23 simulated, 24 mapped |
+| Countries | 12 simulated, 13 mapped |
+| Map databases | 72 (land · sea · sky per site) |
+| Weather databases | 207 (9 types × 23 sites; 18 of them empty placeholders, see [Weather](#weather)) |
 | Vessels | 34 per site |
-| Trip files | 99 |
-| Regulation automata | 48 |
-| Repository size | 14 MB |
+| Trip files | 249, plus 46 formation files |
+| Regulation automata | 48 COLREG, plus local rules for Istanbul |
+| Asset size | 28 MB (working files excluded, see [Layout](#layout)) |
+
+Measured 2026-09-27.
 
 ---
 
@@ -29,20 +31,34 @@ config/
   map/<cc>/<loc>/            land.s3db · sea.s3db · sky.s3db
   weather/<cc>/<loc>/<type>/ environment.s3db
   weather/profiles.yaml      generator profiles, climate zones, field layout
-  simulation/<cc>/<loc>/     cos.ini · rules.yaml · risk.yaml · vessel.s3db · trip/*.csv
+  simulation/<cc>/<loc>/     cos.ini · location.yaml · rules.yaml · risk.yaml · vessel.s3db
+                             trip/*.csv · formation/*.csv
   vehicle/ship/              six ship models
   maritime/regulation/       Legata automata
   risk/                      Bayesian networks and their bindings
   examiner/                  zone rules and penalty scorecard
   data/                      OLAP schema — facts, dimensions, cube
+.claude/skills/              generators: mapgen · shipgen · shiprepair · weathergen
 ```
+
+`location.yaml` names the site and its fallback seabed depth; without it the examiners do not
+load and the simulation never ticks. `formation/` holds the fleet membership files.
+
+Working files are not assets and are not committed: `config/.mapgen/` (map-build inputs and
+renders), `config/.shipgen/` (traffic-repair runs, state, log and backups),
+`config/data/maritime.workingset.s3db` (the database a run writes) and `build/`.
 
 ## Countries and sites
 
 | Country | Sites |
 |---|---|
 | `no` Norway | Ålesund · Bergen · Oslo · Tautra · Trondheim |
-| `tk` Türkiye | Istanbul · Kandilli · Kavak · Kavak–Kandilli · Türkeli |
+| `tk` Türkiye | Istanbul · Kandilli · Kavak · Kavak–Kandilli · Türkeli · Çanakkale |
+| `be` Belgium | Antwerp |
+| `nl` Netherlands | Rotterdam |
+| `de` Germany | Bremen (referenced on Bremerhaven) · Hamburg |
+| `dk` Denmark | Copenhagen |
+| `es` Spain | Barcelona · Valencia |
 | `fi` Finland | Helsinki |
 | `om` Oman | Hormuz |
 | `po` Poland | Gdańsk |
@@ -50,13 +66,15 @@ config/
 | `se` Sweden | Stockholm — **map only**, no scenario or weather |
 | `global` | Atlantic — open-ocean reference site |
 
-The five Turkish sites are the Istanbul Strait at four scales: the whole strait, the
-Kavak–Kandilli reach, and each of Kavak and Kandilli alone. They share a coordinate frame,
+Five of the Turkish sites (all but Çanakkale, on the Dardanelles) are the Istanbul Strait at
+four scales: the whole strait, the Kavak–Kandilli reach, and each of Kavak and Kandilli alone. They share a coordinate frame,
 so a vessel's track is comparable across them.
 
 ## Weather
 
 Nine conditions per site, each a generated force field stored as `environment.s3db`.
+Copenhagen and Çanakkale have the nine files but no rows yet: neither is in a climate zone, so
+their weather has not been generated.
 
 | Type | Wind m/s | Waves Hs m | Visibility nm | Capsize band |
 |---|---|---|---|---|
@@ -83,14 +101,16 @@ apart.
 
 ### Climate zones
 
-Air temperature depends on the site, not only the condition. Four zones:
+Air temperature depends on the site, not only the condition. Six zones:
 
 | Zone | Sites | Notes |
 |---|---|---|
 | `nordic` | 5 Norwegian, Helsinki, Gdańsk | hurricane-force winter storms |
-| `straits` | 5 Turkish | poyraz and lodos gales |
+| `straits` | Istanbul, Kandilli, Kavak, Kavak–Kandilli, Türkeli | poyraz and lodos gales |
 | `tropical` | Hormuz, Singapore | shamal; snow not viable |
 | `atlantic` | Atlantic | tropical-track hurricanes |
+| `northsea` | Antwerp, Rotterdam, Bremen, Hamburg | winter storms; temperatures proposed |
+| `mediterranean` | Barcelona, Valencia | tramontana, DANA, medicanes; temperatures proposed |
 
 Profiles, ranges and the generator settings are in
 [`config/weather/profiles.yaml`](config/weather/profiles.yaml).
@@ -101,8 +121,13 @@ Profiles, ranges and the generator settings are in
 dimensions, start position, weight, behaviour and settings.
 
 Traffic is composed from two things: a **behaviour class** that decides how a vessel moves,
-and a **trip file** that gives it a route. 99 trip files across the sites; a trip is a CSV
+and a **trip file** that gives it a route. 249 trip files across the sites; a trip is a CSV
 of waypoints with speeds and actions, and may loop.
+
+Every site currently carries the same 34-vessel set, first authored for Türkeli. Each site has
+its own copy of the trips and formations, repaired for its map by the `shiprepair` skill so
+that starts, waypoints and fleet members lie on water. Vessel identity is the IMO: a unique,
+checksum-valid 7-digit integer, fleet controllers included.
 
 | Behaviour | Typical use |
 |---|---|
@@ -197,8 +222,10 @@ For fleet and multi-agent scenarios: `Boid`, `Swarm`, `Predator` and `Prey`, wit
 Loaded through four manifests: `rules.colreg.yaml` (42 modules), `rules.examiner.yaml`
 (17 concern examiners), `rules.risk.yaml`, and `rules.mass.yaml`.
 
-Jurisdictional overrides are per site: every one of the 15 sites carries its own
-`rules.yaml` for local rules and `risk.yaml` for its loss matrix. Zone-local limits —
+Jurisdictional overrides are per site: every one of the 23 sites carries its own
+`rules.yaml` for local rules and `risk.yaml` for its loss matrix. The eight sites whose
+`risk.yaml` had no concern `weights` (the six added on 2026-09-27, Copenhagen and Çanakkale)
+now use Trondheim's, with equal weights pending expert values. Zone-local limits —
 speed, overtaking, restricted cargo, under-keel margins — and the penalty scorecard are in
 [`config/examiner/zones.yaml`](config/examiner/zones.yaml).
 
@@ -219,23 +246,33 @@ speed, overtaking, restricted cargo, under-keel margins — and the penalty scor
 Three databases per site. `sea.s3db` holds depth contours and jurisdictional and traffic
 zones as polygons; `land.s3db` the coastline; `sky.s3db` the overhead layer.
 
-3 358 sea polygons across all sites, by zone type:
+15 088 sea polygons across all sites, by zone type:
 
 | Type | Count | | Type | Count |
 |---|---|---|---|---|
-| `FJORD` | 3 141 | | `TRAFFIC_SEPARATION_SCHEME` | 16 |
-| `WATERWAY` | 70 | | `STRANDFLAT` | 14 |
-| `INTERNAL_WATERS` | 56 | | `TERRITORIAL_SEA` | 13 |
-| `HARBOUR` | 39 | | `CONTIGUOUS_ZONE` | 4 |
-| `SEPARATION_ZONE` | 2 | | `EXCLUSIVE_ECONOMIC_ZONE` | 1 |
-| `PRECAUTIONARY_AREA` | 1 | | `AREA_TO_AVOID` | 1 |
+| `SHELF_PLAIN` (depth bands) | 10 094 | | `TRAFFIC_SEPARATION_SCHEME` | 36 |
+| `FJORD` (depth bands) | 4 414 | | `TERRITORIAL_SEA` | 23 |
+| `HARBOUR` | 287 | | `STRANDFLAT` | 12 |
+| `WATERWAY` | 94 | | `CONTIGUOUS_ZONE` | 6 |
+| `INTERNAL_WATERS` | 70 | | `SEPARATION_ZONE` | 6 |
+| `AREA_TO_AVOID` | 38 | | `EXCLUSIVE_ECONOMIC_ZONE` | 4 |
+| | | | `PRECAUTIONARY_AREA` | 4 |
 
-Plus 164 land polygons.
+Plus 1 115 land polygons.
 
-Coverage is uneven by design — Bergen carries 1 442 polygons and Helsinki, Gdańsk and
-Stockholm none yet, so those three are frames without bathymetry. The engine's grounding
-and berthing examiners read `Sea.nominal_depth` from these polygons, so a site with no sea
-shapes cannot produce a depth-based finding.
+Two kinds of map:
+
+- **Built from open data** by the `mapgen` skill: OpenStreetMap coastline, seamarks and inland
+  water, GMRT bathymetry and Marine Regions zones, in UTM at a real scale (10–100 m per map
+  unit, recorded in `land.s3db`). Every site except the five Istanbul Strait sites and the
+  Atlantic. The maps built since 2026-09-25 (Antwerp, Bremen, Hamburg, Copenhagen, Barcelona,
+  Valencia, Helsinki, Rotterdam, Ålesund, Gdańsk, Stockholm, Çanakkale) have a site file in
+  `.claude/skills/mapgen/sites/`, so they can be rebuilt; the older ones do not.
+- **Hand-drawn** at 1 m per unit: the Istanbul Strait sites carry only a few shapes, and the
+  Atlantic none.
+
+The engine's grounding and berthing examiners read depth from these polygons; where no shape
+reports one, `location.yaml`'s `depth.nominal` applies.
 
 ## Data schema
 
@@ -254,5 +291,37 @@ A scenario is addressed by country, location, weather and traffic. The engine's
 `$(MAP)`, `$(SIMULATION)`, `$(WEATHER)` and `$(TRAFFIC)` against the paths above, so
 adding a site is a matter of creating the three directories and their databases.
 
-Map and weather generation procedures are documented in the engine repository under
-`tools/mapping/`.
+## Generators
+
+The procedures that build and repair the assets live in this repository as Claude Code skills,
+one folder each under [`.claude/skills/`](.claude/skills). They moved here from the engine's
+`tools/mapping/`, which was a temporary staging area.
+
+| Skill | Builds | Scripts |
+|---|---|---|
+| `mapgen` | `map/<cc>/<loc>/` from open data, then validates and renders it | `build_site.py`, `sites/*.json` |
+| `shipgen` | a site's traffic: vessels, trips, formations, traffic levels | `fix_identity.py` |
+| `shiprepair` | repairs traffic copied from another site until every vessel moves in a headless run | `phase.py` |
+| `weathergen` | `weather/<cc>/<loc>/<type>/`, then validates and checks it headless | `weathergen.py`, `validate_weather.py`, `check_weather.py` |
+
+The scripts need the engine checkout for its Python environment; set `COSPY` to its path.
+
+## Additions of 2026-09-27
+
+- **Six sites**: Antwerp, Rotterdam, Bremen, Hamburg, Barcelona, Valencia. Each has a map
+  built from open data, the 34-vessel traffic repaired for its map, all nine weather types,
+  a `location.yaml` and a `risk.yaml` with concern weights. Rotterdam and Antwerp include
+  river and dock water from OpenStreetMap; Hamburg is river only, so its depth is a nominal
+  15 m set in its site file.
+- **Two climate zones**, `northsea` and `mediterranean`, with proposed temperatures.
+- **`location.yaml` and trip and formation copies** for every site, and `risk.yaml` weights
+  for the eight sites that lacked them.
+- **Generators moved** into `.claude/skills/`.
+
+Open:
+
+- **Rotterdam traffic**: FLEET102–109 do not move. Their fleets were spread across
+  disconnected water, so the swarm cannot form; the members need placing together in the
+  main water body.
+- **Copenhagen and Çanakkale weather**: empty until each is assigned a climate zone.
+- **None of the above is committed yet.**

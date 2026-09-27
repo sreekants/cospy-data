@@ -26,8 +26,9 @@
 # changes when a jurisdiction changes.
 
 risk:
-  country: "tk"
-  location: "canakkale"
+  # No currency key. Every valuation in the platform is USD, declared once in
+  # RiskModel.CURRENCY, so that two territories cannot disagree about what a
+  # stored number means.
 
   # --- the i axis: spatial zones ------------------------------------------
   # Four zones, declared outermost first. A vessel usually sits inside several
@@ -67,6 +68,19 @@ risk:
     - environmental
     - operational
 
+  # --- Rw: relative weight of the concerns --------------------------------
+  # One weight per concern, keyed on exactly the concerns above; a missing or
+  # unknown key stops the risk examiner at load. Weights are normalised to sum
+  # to 1 before use, so only their ratios matter. Uniform is the deliberate
+  # null: no concern is weighted above another pending an expert consensus
+  # (REQ.004). Rw is recorded in fact_rw and never applied to Rl; R_ev = Ro . Rw . Rl
+  # is composed at rollup.
+  weights:
+    safety: 1.0
+    traffic: 1.0
+    environmental: 1.0
+    operational: 1.0
+
   # Which concern each consequence node of the network scores into. This is
   # the one mapping the source paper does not supply.
   consequences:
@@ -77,7 +91,13 @@ risk:
     mission_failure: operational
 
   # --- ECONOMIC COST: base cost of each consequence state, USD ---------------------------
-  # A deployment that means to assert a local figure - the statistical life
+  # Table A.5 of Kristensen et al. (2025) states these in NOK. They are
+  # restated here at the paper's own implied rate: it gives NOK 2 000 000 as
+  # "approx. USD 190 000" and NOK 1 000 000 as "approx. USD 95 000", so
+  # 1 NOK = 0.095 USD. Rounded to whole dollars.
+  #
+  # These remain a foreign valuation converted, not a local one. A
+  # deployment that means to assert a local figure - the statistical life
   # value above all, which is a national convention rather than a physical
   # constant - must replace them rather than convert them.
   cost:
@@ -97,7 +117,7 @@ risk:
       minor: 47500            # USD
       none: 0
     mission_failure:
-      "yes": 950              # USD 10 000; quoted, PyYAML reads bare yes/no as booleans
+      "yes": 950              # NOK 10 000; quoted, PyYAML reads bare yes/no as booleans
       "no": 0
 
   # --- Rl proper: how location changes what an outcome is worth -----------
