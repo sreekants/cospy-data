@@ -277,12 +277,13 @@ reports one, `location.yaml`'s `depth.nominal` applies.
 ## Data schema
 
 [`config/data/`](config/data) holds the OLAP definitions the simulation writes into:
-`maritime.xml` (the authoritative fact and dimension schema, parsed at startup to build
+`maritime.xml` (the generated fact and dimension schema, parsed at startup to build
 the write partitions), `facts.csv`, `dimensions.csv`, `cube.csv` and `enumeration.csv`,
 with `maritime.sql` and the seed databases.
 
-`maritime.xml` is what the engine reads. The CSVs are the generator's inputs; editing them
-alone has no runtime effect.
+`maritime.xml` is what the engine reads. The CSVs are the only source of the schema: `maritime.xml`,
+`maritime.sql` and `maritime.s3db` are generated from them with `cubegen` (the `cubegen` skill) and
+are never edited by hand. Editing a CSV has no runtime effect until the schema is regenerated.
 
 ## Using a site
 
@@ -303,6 +304,7 @@ one folder each under [`.claude/skills/`](.claude/skills). They moved here from 
 | `shipgen` | a site's traffic: vessels, trips, formations, traffic levels | `fix_identity.py` |
 | `shiprepair` | repairs traffic copied from another site until every vessel moves in a headless run | `phase.py` |
 | `weathergen` | `weather/<cc>/<loc>/<type>/`, then validates and checks it headless | `weathergen.py`, `validate_weather.py`, `check_weather.py` |
+| `cubegen` | `data/maritime.xml`, `.sql` and `.s3db` from the schema CSVs, checked in a scratch folder and installed into both `config/data` copies | `schemagen.py` |
 
 The scripts need the engine checkout for its Python environment; set `COSPY` to its path.
 
