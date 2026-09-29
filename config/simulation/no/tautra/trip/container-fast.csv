@@ -1,5 +1,20 @@
-id,t,x,y,z,sog,cog,action
-1,0,420,5,0,3,0,
-2,0,540,509,0,3,0,
-3,0,400,770,0,3,0,
-4,0,930,5,0,3,0,
+id,t,x,y,z,sog,cog,action,comment
+1,0,420.5,12.5,0,3,0,,
+2,0,302.5,274.5,0,3,0,,soak: routed through water with 240 m clearance (fast ship; the narrow gap by the causeway swung it aground)
+3,0,295.5,300.5,0,3,0,,soak: routed through water with 240 m clearance (fast ship; the narrow gap by the causeway swung it aground)
+4,0,291.5,304.5,0,3,0,,soak: routed through water with 240 m clearance (fast ship; the narrow gap by the causeway swung it aground)
+5,0,265.5,340.5,0,3,0,,soak: routed through water with 240 m clearance (fast ship; the narrow gap by the causeway swung it aground)
+6,0,265.5,351.5,0,3,0,,soak: routed through water with 240 m clearance (fast ship; the narrow gap by the causeway swung it aground)
+7,0,265.5,361.5,0,3,0,,
+8,0,433.5,487.5,0,3,0,,
+9,0,400.8,486.5,0,2.4,0,,
+10,0,271.5,367.5,0,2.4,0,,soak: routed through water with 240 m clearance (fast ship; the narrow gap by the causeway swung it aground)
+11,0,265.5,358.5,0,2.4,0,,soak: routed through water with 240 m clearance (fast ship; the narrow gap by the causeway swung it aground)
+12,0,265.5,351.5,0,2.4,0,,soak: routed through water with 240 m clearance (fast ship; the narrow gap by the causeway swung it aground)
+13,0,265.5,348.5,0,2.4,0,,
+14,0,274.5,321.5,0,2.4,0,,soak: routed through water with 240 m clearance (fast ship; the narrow gap by the causeway swung it aground)
+15,0,291.5,304.5,0,2.4,0,,soak: routed through water with 240 m clearance (fast ship; the narrow gap by the causeway swung it aground)
+16,0,302.5,293.5,0,2.4,0,,soak: routed through water with 240 m clearance (fast ship; the narrow gap by the causeway swung it aground)
+17,0,339.5,148.5,0,2.4,0,,soak: routed through water with 240 m clearance (fast ship; the narrow gap by the causeway swung it aground)
+18,0,412.5,75.4,0,3,0,,
+19,0,478.5,12.5,0,3,0,,

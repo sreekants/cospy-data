@@ -1,5 +1,8 @@
-id,t,x,y,z,sog,cog,action
-1,0,435,5,0,1.5,0,
-2,0,538,509,0,1.5,0,
-3,0,400,770,0,1.7,0,
-4,0,925,5,0,1.5,0,
+id,t,x,y,z,sog,cog,action,comment
+1,0,435,5,0,1.5,0,,
+2,0,265.5,359.5,0,1.5,0,,rerouted by soak: via water
+3,0,454.5,495.5,0,1.5,0,,rerouted by soak: moved from 538 509
+4,0,400.5,495.5,0,0.6963,0,,rerouted by soak: moved from 400 770
+5,0,251,383.6,0,0.6963,0,,rerouted by soak: via water
+6,0,414.5,76.5,0,1.7,0,,rerouted by soak: via water
+7,0,486.5,5.5,0,1.5,0,,rerouted by soak: moved from 925 5

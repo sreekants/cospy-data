@@ -1,5 +1,5 @@
-id,t,x,y,z,sog,cog,action
-1,0,739.8,983.2,0,1.5,0,
-2,0,46.3,989.7,0,2.0,0,fishing(10|25|0.25)
-3,0,173.9,30.7,0,1.5,0,anchor(1.5)
-3,0,3.8,813.6,0,1.5,0,fishing(10|25|0.25)
+id,t,x,y,z,sog,cog,action,comment
+1,0,739.8,983.2,0,1.5,0,,
+2,0,46.3,989.7,0,2.0,0,fishing(10|1.3|0.25),soak plan fix: fishing step 25 -> 1.3 to stay on water
+3,0,173.9,30.7,0,1.5,0,anchor(1.5),
+3,0,3.8,813.6,0,1.5,0,fishing(10|0.1|0.25),soak plan fix: fishing step 25 -> 0.1 to stay on water

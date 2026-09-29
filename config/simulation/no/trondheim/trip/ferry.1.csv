@@ -1,4 +1,4 @@
-id,t,x,y,z,sog,cog,action
-1,0,580,655,0,.5,0,
-2,0,530,640,0,.5,0,
-3,0,420,594,0,.5,0,
+id,t,x,y,z,sog,cog,action,comment
+1,0,528.5,925,0,.5,0,,"Trondheim; soak plan fix: moved from 530 925, a waypoint another vessel shares"
+2,0,530,860,0,.5,0,,Midpoint
+3,0,290,660,0,.5,0,,Vanvikan

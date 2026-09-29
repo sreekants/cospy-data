@@ -1,4 +1,8 @@
-id,t,x,y,z,sog,cog,action
-1,0,420,594,0,.5,0,
-2,0,530,617,0,.5,0,
-3,0,580,655,0,.5,0,
+id,t,x,y,z,sog,cog,action,comment
+1,0,420,594,0,.5,0,,
+2,0,530,617,0,.5,0,,
+3,0,529.2,642,0,.5,0,,rerouted by soak: via water
+4,0,529.2,649.2,0,.5,0,,rerouted by soak: via water
+5,0,538.8,658.8,0,.5,0,,rerouted by soak: via water
+6,0,570,690,0,.5,0,,rerouted by soak: via water
+7,0,579.6,690,0,.5,0,,rerouted by soak: moved from 580 655

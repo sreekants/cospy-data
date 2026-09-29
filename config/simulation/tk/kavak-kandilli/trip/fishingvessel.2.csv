@@ -1,4 +1,4 @@
-id,t,x,y,z,sog,cog,action
-1,0,424.7,567.2,0,1.5,0,
-2,0,671.8,141.6,0,2.0,0,
-3,0,725.9,5.5,0,1.5,0,fishing(10|10|0.25)
+id,t,x,y,z,sog,cog,action,comment
+1,0,424.7,567.2,0,1.5,0,,
+2,0,671.8,141.6,0,2.0,0,,
+3,0,598.2,95,0,1.5,0,fishing(10|10|0.25),"soak plan fix: fishing ground moved from 725.9 5.5 for room; soak plan fix: moved from 656.4 80.4, a waypoint another vessel shares"

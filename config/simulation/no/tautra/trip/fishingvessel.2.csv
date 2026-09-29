@@ -1,4 +1,5 @@
-id,t,x,y,z,sog,cog,action
-1,0,65,245,0,1.5,0,
-2,0,140,48,0,2.0,0,
-3,0,455,48,0,1.5,0,fishing(10|10|0.25)
+id,t,x,y,z,sog,cog,action,comment
+1,0,65,245,0,1.5,0,,
+2,0,203.3,118.3,0,1.5,0,,rerouted by soak: via water
+3,0,208.7,114.1,0,2.0,0,,rerouted by soak: moved from 140 48
+4,0,455,48,0,1.5,0,fishing(10|7.4|0.25),soak plan fix: fishing step 10 -> 7.4 to stay on water

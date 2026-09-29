@@ -1,9 +1,33 @@
-id,t,x,y,z,sog,cog,action
-1,0,263,195.2,0,1.5,0,
-2,0,145.7,316.8,0,1.5,0,
-3,0,348.6,7.5,0,0.8,0,anchor(2)
-4,0,202.2,298.7,0,1.5,0,
-5,0,1020,220,0,1.5,0,
-6,0,960,320,0,1.5,0,anchor(1.5)
-7,0,693,20,0,1.5,0,anchor(1.5)
-8,0,240,280,0,1.5,0,
+id,t,x,y,z,sog,cog,action,comment
+1,0,263,195.2,0,1.5,0,,
+2,0,145.7,316.8,0,1.5,0,,
+3,0,348.6,7.5,0,0.8,0,anchor(2),
+4,0,202.2,298.7,0,1.5,0,,
+5,0,225.5,342.5,0,1.5,0,,rerouted by soak: via water
+6,0,273.5,386.5,0,1.5,0,,rerouted by soak: via water
+7,0,305.5,386.5,0,1.5,0,,rerouted by soak: via water
+8,0,440.5,308.5,0,1.5,0,,rerouted by soak: via water
+9,0,458.6,286.1,0,1.5,0,,rerouted by soak: via water
+10,0,485,269.1,0,1.5,0,,rerouted by soak: moved from 1020 220; rerouted by soak: moved from 481.4 256.6
+11,0,476.6,322.2,0,1.5,0,anchor(1.5),rerouted by soak: moved from 960 320; rerouted by soak: moved from 486.5 320.5
+12,0,302.5,384.5,0,1.5,0,,rerouted by soak: via water
+13,0,289.5,382.5,0,0.6144,0,,rerouted by soak: via water
+14,0,268.5,355.5,0,0.6144,0,,rerouted by soak: via water
+15,0,268.5,351.5,0,0.6144,0,,rerouted by soak: via water
+16,0,268.5,349.5,0,0.6144,0,,rerouted by soak: via water
+17,0,267.5,343.5,0,0.6144,0,,rerouted by soak: via water; rerouted by soak: moved from 271.5 347.5
+18,0,302.5,282.5,0,0.6144,0,,rerouted by soak: via water
+19,0,335.5,163.5,0,0.6144,0,,rerouted by soak: via water
+20,0,404.5,94.5,0,1.5,0,,rerouted by soak: via water
+21,0,480.6,24.6,0,0.135,0,anchor(1.5),rerouted by soak: moved from 693 20
+22,0,307.5,217.5,0,0.135,0,,rerouted by soak: via water
+23,0,307.5,229.5,0,0.135,0,,rerouted by soak: via water
+24,0,291.1,296.1,0,0.135,0,,rerouted by soak: via water
+25,0,290.3,302.3,0,0.135,0,,rerouted by soak: via water
+26,0,286,303,0,1.5,0,,rerouted by soak: via water
+27,0,248.9,303.1,0,1.5,0,,rerouted by soak: via water
+28,0,245.5,302.5,0,1.5,0,,rerouted by soak: via water
+29,0,240.5,297.5,0,1.5,0,,rerouted by soak: via water
+30,0,240.5,295.5,0,1.5,0,,rerouted by soak: via water
+31,0,240.5,291.5,0,1.5,0,,rerouted by soak: via water
+32,0,237.5,300.5,0,1.5,0,,rerouted by soak: moved from 240 280; rerouted by soak: moved from 240.5 288.5

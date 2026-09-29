@@ -1,4 +1,17 @@
-id,t,x,y,z,sog,cog,action
-1,0,65,245,0,1.5,0,
-2,0,140,48,0,2.0,0,
-3,0,455,48,0,1.5,0,fishing(10|10|0.25)
+id,t,x,y,z,sog,cog,action,comment
+1,0,65,245,0,1.5,0,,
+2,0,104.8,53.3,0,2.0,0,,rerouted by soak: moved from 140 48
+3,0,133.1,203.1,0,2.0,0,,rerouted by soak: via water
+4,0,222.3,310,0,0.6,0,,rerouted by soak: via water
+5,0,263,305,0,0.6,0,,rerouted by soak: via water
+6,0,299,285,0,0.6,0,,rerouted by soak: via water
+7,0,301,285,0,0.6,0,,rerouted by soak: via water
+8,0,533.9,508.1,0,0.6,0,,rerouted by soak: via water
+9,0,542.2,507.2,0,1.28,0,,rerouted by soak: via water
+10,0,648.7,462,0,2.0,0,,rerouted by soak: via water
+11,0,667,445,0,2.0,0,,rerouted by soak: via water
+12,0,667,413,0,0.6,0,,rerouted by soak: via water
+13,0,623,215,0,0.6,0,,rerouted by soak: via water
+14,0,457,97,0,2.0,0,,rerouted by soak: via water; rerouted by soak: moved from 462.9 93.8
+15,0,455,93,0,2.0,0,,rerouted by soak: via water; rerouted by soak: moved from 460.6 89.9
+16,0,451,87,0,1.5,0,fishing(10|0.6|0.25),rerouted by soak: moved from 455 48; soak plan fix: fishing step 10 -> 0.6 to stay on water; rerouted by soak: moved from 456.5 83.2

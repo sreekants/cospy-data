@@ -1,7 +1,17 @@
-id,t,x,y,z,sog,cog,action
-1,0,411,413,0,1.5,0,
-2,0,538,509,0,1.5,0,anchor(1.5)
-3,0,925,47,0,1.5,0,
-4,0,435,47,0,1.5,0,
-5,0,435,47,0,1.5,0,
-6,0,926,482,0,1.5,0,
+id,t,x,y,z,sog,cog,action,comment
+1,0,411,413,0,1.5,0,,
+2,0,539.3,505.2,0,1.5,0,anchor(1.5),"soak plan fix: moved from 538 507, a waypoint another vessel shares"
+3,0,651.2,459.2,0,1.5,0,,rerouted by soak: via water
+4,0,665,371,0,1.5,0,,rerouted by soak: via water
+5,0,660.5,194.9,0,1.5,0,,"rerouted by soak: via water; soak plan fix: moved from 659 195, a waypoint another vessel shares"
+6,0,708.9,126.2,0,1.5,0,,"rerouted by soak: via water; soak plan fix: moved from 707 125, a waypoint another vessel shares"
+7,0,867,47,0,1.5,0,,rerouted by soak: via water
+8,0,869,47,0,1.5,0,,rerouted by soak: moved from 925 47
+9,0,711,121,0,1.5,0,,rerouted by soak: via water
+10,0,641,197,0,1.5,0,,rerouted by soak: via water
+11,0,461,105,0,1.5,0,,rerouted by soak: via water
+12,0,445,83,0,1.5,0,,rerouted by soak: moved from 435 47
+13,0,503,135,0,1.5,0,,rerouted by soak: via water
+14,0,645,241,0,1.5,0,,rerouted by soak: via water
+15,0,705,443,0,1.5,0,,rerouted by soak: via water
+16,0,741,469,0,1.5,0,,rerouted by soak: moved from 926 482

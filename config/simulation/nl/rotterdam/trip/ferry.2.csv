@@ -1,4 +1,27 @@
-id,t,x,y,z,sog,cog,action
-1,0,4.7,686.3,0,.5,0,
-2,0,530,617,0,.5,0,
-3,0,563.4,613.7,0,.5,0,
+id,t,x,y,z,sog,cog,action,comment
+1,0,153,403.5,0,.5,0,,"rerouted by soak: moved from 4.7 686.3; rerouted by soak: moved from 123 493; soak plan fix: moved from 153 405, a waypoint another vessel shares"
+2,0,178.9,406.5,0,.5,0,,"rerouted by soak: via water; soak plan fix: moved from 179 405, a waypoint another vessel shares"
+3,0,180.7,408.5,0,.5,0,,"rerouted by soak: via water; soak plan fix: moved from 181 407, a waypoint another vessel shares"
+4,0,183.8,408.3,0,.5,0,,"rerouted by soak: via water; soak plan fix: moved from 183 407, a waypoint another vessel shares"
+5,0,191.5,418.6,0,.5,0,,"rerouted by soak: via water; rerouted by soak: moved from 153 479; soak plan fix: moved from 193 417, a waypoint another vessel shares"
+6,0,187.5,454.9,0,.5,0,,"rerouted by soak: via water; soak plan fix: moved from 189 455, a waypoint another vessel shares"
+7,0,209.2,383.6,0,.5,0,,"rerouted by soak: via water; soak plan fix: moved from 207 383, a waypoint another vessel shares"
+8,0,214.9,378.1,0,.5,0,,"rerouted by soak: via water; soak plan fix: moved from 213 377, a waypoint another vessel shares"
+9,0,219.6,379.2,0,0.32,0,,"rerouted by soak: via water; soak plan fix: moved from 219 377, a waypoint another vessel shares"
+10,0,227.6,379.2,0,0.32,0,,"rerouted by soak: via water; soak plan fix: moved from 227 377, a waypoint another vessel shares"
+11,0,244.7,384.5,0,0.32,0,,"rerouted by soak: via water; soak plan fix: moved from 245 383, a waypoint another vessel shares"
+12,0,246.3,381.2,0,0.32,0,,"rerouted by soak: via water; soak plan fix: moved from 247.3 382.3, a waypoint another vessel shares"
+13,0,252.4,385.2,0,0.15,0,,rerouted by soak: via water
+14,0,262.6,378.6,0,0.15,0,,"rerouted by soak: via water; soak plan fix: moved from 261 377, a waypoint another vessel shares"
+15,0,267,377,0,0.15,0,,rerouted by soak: via water
+16,0,271,375.5,0,0.15,0,,"rerouted by soak: via water; soak plan fix: moved from 271 377, a waypoint another vessel shares"
+17,0,264.6,375.5,0,0.15,0,,"rerouted by soak: via water; soak plan fix: moved from 265 377, a waypoint another vessel shares"
+18,0,260.1,379.8,0,0.15,0,,rerouted by soak: via water
+19,0,251.7,385.1,0,0.15,0,,"rerouted by soak: via water; soak plan fix: moved from 251 383, a waypoint another vessel shares"
+20,0,247.6,381.6,0,0.15,0,,"rerouted by soak: via water; soak plan fix: moved from 247 383, a waypoint another vessel shares"
+21,0,233.1,379.5,0,0.15,0,,"rerouted by soak: via water; soak plan fix: moved from 233 381, a waypoint another vessel shares"
+22,0,231.3,377.5,0,0.15,0,,"rerouted by soak: via water; soak plan fix: moved from 231 379, a waypoint another vessel shares"
+23,0,225.1,375.5,0,0.15,0,,"rerouted by soak: via water; soak plan fix: moved from 225 377, a waypoint another vessel shares"
+24,0,223.3,373.5,0,0.15,0,,"rerouted by soak: via water; soak plan fix: moved from 223 375, a waypoint another vessel shares"
+25,0,208.8,373.5,0,.5,0,,"rerouted by soak: via water; rerouted by soak: moved from 331 423; soak plan fix: moved from 209 375, a waypoint another vessel shares"
+26,0,190.9,416.2,0,.5,0,,"rerouted by soak: via water; rerouted by soak: moved from 405 475; soak plan fix: moved from 193 417, a waypoint another vessel shares"

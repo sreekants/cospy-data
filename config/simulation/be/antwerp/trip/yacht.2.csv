@@ -1,9 +1,17 @@
-id,t,x,y,z,sog,cog,action
-1,0,240,280,0,1.5,0,
-2,0,431,200,0,1.5,0,
-3,0,251.9,267.7,0,0.8,0,anchor(2)
-4,0,800,120,0,1.5,0,
-5,0,1020,220,0,1.5,0,
-6,0,960,320,0,1.5,0,anchor(1.5)
-7,0,693,20,0,1.5,0,anchor(1.5)
-8,0,240,280,0,1.5,0,
+id,t,x,y,z,sog,cog,action,comment
+1,0,243.3,283.3,0,1.5,0,,
+2,0,431,200,0,1.5,0,,
+3,0,250.3,264.2,0,0.64,0,anchor(2),
+4,0,393.4,205.8,0,1.2,0,,rerouted by soak: moved from 800 120
+5,0,421,294.3,0,1.5,0,,rerouted by soak: via water
+6,0,423.1,338.9,0,1.5,0,,rerouted by soak: via water
+7,0,525,375,0,1.5,0,,rerouted by soak: via water
+8,0,537,375,0,1.5,0,,rerouted by soak: moved from 1020 220
+9,0,523,379,0,1.5,0,,rerouted by soak: via water
+10,0,539,525,0,1.5,0,,rerouted by soak: via water
+11,0,643.3,595.7,0,1.5,0,anchor(1.5),rerouted by soak: moved from 960 320
+12,0,549.1,525,0,1.5,0,,rerouted by soak: via water
+13,0,509.6,403.1,0,1.5,0,,rerouted by soak: via water
+14,0,411,293,0,1.5,0,,rerouted by soak: via water
+15,0,389.4,215,0,1.2,0,anchor(1.5),rerouted by soak: moved from 693 20
+16,0,227.5,257.3,0,1.2,0,,

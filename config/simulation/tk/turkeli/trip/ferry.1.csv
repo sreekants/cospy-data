@@ -1,4 +1,4 @@
-id,t,x,y,z,sog,cog,action
-1,0,580,655,0,.5,0,
-2,0,530,640,0,.5,0,
-3,0,420,594,0,.5,0,
+id,t,x,y,z,sog,cog,action,comment
+1,0,597.2,597.5,0,.5,0,,"soak plan fix: moved from 580 655, a waypoint another vessel shares"
+2,0,481.9,563.9,0,.5,0,,"soak plan fix: moved from 530 640, a waypoint another vessel shares"
+3,0,446.2,648,0,.5,0,,"soak plan fix: moved from 420 594, a waypoint another vessel shares"

@@ -1,5 +1,8 @@
-id,t,x,y,z,sog,cog,action
-1,0,377.1,617.5,0,1.5,0,
-2,0,1130,296,0,2.0,0,fishing(10|25|0.25)
-3,0,900,114,0,1.5,0,anchor(1.5)
-3,0,763.3,94.4,0,1.5,0,fishing(10|25|0.25)
+id,t,x,y,z,sog,cog,action,comment
+1,0,377.1,617.5,0,1.5,0,,
+2,0,471,491,0,1.5,0,,rerouted by soak: via water
+3,0,495,345,0,1.5,0,,rerouted by soak: via water
+4,0,903,103,0,1.5,0,,rerouted by soak: via water
+5,0,933,123,0,2.0,0,fishing(10|0.7|0.25),rerouted by soak: moved from 1130 296; soak plan fix: fishing step 25 -> 0.7 to stay on water
+6,0,900,114,0,1.5,0,anchor(1.5),
+7,0,763.3,94.4,0,1.5,0,fishing(10|0.1|0.25),soak plan fix: fishing step 25 -> 0.1 to stay on water

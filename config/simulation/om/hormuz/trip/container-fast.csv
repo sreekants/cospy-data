@@ -1,5 +1,47 @@
-id,t,x,y,z,sog,cog,action
-1,0,420,5,0,3,0,
-2,0,540,509,0,3,0,
-3,0,400,770,0,3,0,
-4,0,930,5,0,3,0,
+id,t,x,y,z,sog,cog,action,comment
+1,0,421,16.4,0,0.9,0,,rerouted by soak: moved from 420 5
+2,0,525,463,0,0.9,0,,rerouted by soak: via water
+3,0,525,467,0,0.9,0,,rerouted by soak: via water
+4,0,533,475,0,0.9,0,,rerouted by soak: via water
+5,0,539,481,0,0.9,0,,rerouted by soak: via water
+6,0,540,481.2,0,3,0,,
+7,0,547,482.8,0,3,0,,rerouted by soak: via water
+8,0,560.9,481.2,0,3,0,,rerouted by soak: via water
+9,0,585.5,474.3,0,3,0,,rerouted by soak: via water
+10,0,592.2,468.3,0,3,0,,rerouted by soak: via water
+11,0,609,445,0,3,0,,rerouted by soak: via water
+12,0,611,443,0,3,0,,rerouted by soak: via water
+13,0,617,443,0,3,0,,rerouted by soak: via water
+14,0,623,443,0,3,0,,rerouted by soak: via water
+15,0,637,459,0,3,0,,rerouted by soak: via water
+16,0,637,469,0,3,0,,rerouted by soak: via water
+17,0,637,473,0,3,0,,rerouted by soak: via water
+18,0,633,477,0,3,0,,rerouted by soak: via water
+19,0,625,485,0,3,0,,rerouted by soak: via water
+20,0,607,485,0,3,0,,rerouted by soak: via water
+21,0,605,485,0,3,0,,rerouted by soak: via water
+22,0,603,483,0,3,0,,rerouted by soak: via water
+23,0,627,547,0,3,0,,rerouted by soak: via water
+24,0,627,563,0,3,0,,rerouted by soak: via water
+25,0,580.8,743.8,0,3,0,,rerouted by soak: via water
+26,0,499,741,0,3,0,,rerouted by soak: via water
+27,0,469,721,0,3,0,,rerouted by soak: via water
+28,0,460.1,720.7,0,3,0,,rerouted by soak: via water
+29,0,455.7,723.5,0,3,0,,rerouted by soak: via water
+30,0,436.8,737.1,0,3,0,,rerouted by soak: via water
+31,0,436,743,0,3,0,,rerouted by soak: via water
+32,0,431,751,0,3,0,,rerouted by soak: via water
+33,0,431,753,0,3,0,,rerouted by soak: via water
+34,0,433.4,751.4,0,2.4,0,,rerouted by soak: via water
+35,0,433.4,749,0,2.4,0,,rerouted by soak: via water
+36,0,437,743,0,2.4,0,,rerouted by soak: via water
+37,0,437,735,0,2.4,0,,rerouted by soak: via water
+38,0,441,731,0,2.4,0,,rerouted by soak: via water
+39,0,443,725,0,2.4,0,,rerouted by soak: moved from 400 770; rerouted by soak: moved from 429.4 760.8
+40,0,443,731,0,1.92,0,,rerouted by soak: via water
+41,0,457,723,0,1.92,0,,rerouted by soak: via water
+42,0,461,723,0,1.92,0,,rerouted by soak: via water
+43,0,471,719,0,1.92,0,,rerouted by soak: via water; rerouted by soak: moved from 467 725.6
+44,0,527,747,0,1.92,0,,rerouted by soak: via water
+45,0,578.6,748.1,0,3,0,,rerouted by soak: via water
+46,0,931,13,0,3,0,,rerouted by soak: moved from 930 5

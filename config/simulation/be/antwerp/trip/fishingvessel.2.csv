@@ -1,4 +1,10 @@
-id,t,x,y,z,sog,cog,action
-1,0,65,245,0,1.5,0,
-2,0,140,48,0,2.0,0,
-3,0,455,48,0,1.5,0,fishing(10|10|0.25)
+id,t,x,y,z,sog,cog,action,comment
+1,0,64.4,249.3,0,1.5,0,,rerouted by soak: moved from 65 245
+2,0,46.4,249,0,1.5,0,,rerouted by soak: via water
+3,0,35,241.5,0,1.5,0,,rerouted by soak: via water
+4,0,37,223,0,1.5,0,,rerouted by soak: via water
+5,0,54.6,204.2,0,1.5,0,,rerouted by soak: via water
+6,0,104,175.1,0,2.0,0,,rerouted by soak: moved from 140 48
+7,0,207,225,0,2.0,0,,rerouted by soak: via water
+8,0,209,225,0,2.0,0,,rerouted by soak: via water
+9,0,345,219,0,1.5,0,fishing(10|10|0.25),rerouted by soak: moved from 455 48; soak plan fix: fishing ground moved from 391 183 for room

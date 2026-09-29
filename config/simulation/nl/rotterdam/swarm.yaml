@@ -1,22 +1,27 @@
 # Swarm settings for fleet controllers (NavalFleet -> cos.behavior.motion.PreyBehavior).
 # Settings for the fleets at nl/rotterdam, referenced from a controller's settings as
 # swarm=$(DB)/simulation/nl/rotterdam/swarm.yaml.
-# Units as the swarm uses them: metres, metres per tick, degrees per tick.
-# These values reproduce the behaviour before externalisation (2026-09-27); they are not
-# yet scaled to the ship model or the map, which is why fleets barely move on real-scale maps.
+# Units as the swarm uses them: metres, metres per simulated second, degrees per simulated second.
+# Speeds and distances were raised on 2026-09-29 from the pre-externalisation values (0.5 m/s,
+# 18 m apart), which barely moved fleets on real-scale maps.
+
+# Minimums for CViz, which draws this map at 37.5 m per pixel: members move at least 0.5 pixels
+# per simulated second (18.75 m/s) and keep at least 5 pixels (187.5 m) apart. To hold that,
+# minSeparation is 9 pixels, separation weighs 6 and prey turn up to 45 degrees per second: with
+# 7 pixels, weight 1.3 and 9 degrees they settled near 5 pixels and passed within 0.3 (2026-09-29).
 
 prey:                         # fleet members, formation type 100000
-  speed: 0.5                  # m/tick; was hard-coded in PreyBehavior
-  maxTurnAngle: 9.0           # degrees per tick
-  minSeparation: 18.0         # m; closer neighbours are pushed away
-  minFlockDist: 55.0          # m; cohesion applies when the mean distance exceeds this
+  speed: 18.8                  # m/s
+  maxTurnAngle: 45.0           # degrees per simulated second
+  minSeparation: 337.5         # m; closer neighbours are pushed away
+  minFlockDist: 1031.3          # m; cohesion applies when the mean distance exceeds this
   predatorSightDist: 100.0    # m; predators farther than this are ignored
   cohesion: 0.7               # steering weights
   alignment: 0.9
-  separation: 1.3
+  separation: 6.0
   flee: 2.5
 
 predator:                     # formation type 200000
-  speed: 0.5                  # m/tick; was hard-coded in PreyBehavior
-  maxTurnAngle: 8.0           # degrees per tick
+  speed: 18.8                  # m/s
+  maxTurnAngle: 8.0           # degrees per simulated second
   killDist: 10.0              # m

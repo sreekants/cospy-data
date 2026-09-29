@@ -1,5 +1,7 @@
-id,t,x,y,z,sog,cog,action
-1,0,420,5,0,3,0,
-2,0,540,509,0,3,0,
-3,0,400,770,0,3,0,
-4,0,930,5,0,3,0,
+id,t,x,y,z,sog,cog,action,comment
+1,0,421,11,0,3,0,,rerouted by soak: moved from 420 5
+2,0,487,227,0,3,0,,rerouted by soak: via water
+3,0,473,441,0,3,0,,rerouted by soak: via water
+4,0,544.3,504.8,0,3,0,,"soak plan fix: moved from 540 509, a waypoint another vessel shares"
+5,0,394.7,767.1,0,3,0,,"soak plan fix: moved from 400 770, a waypoint another vessel shares"
+6,0,931,11,0,3,0,,rerouted by soak: moved from 930 5

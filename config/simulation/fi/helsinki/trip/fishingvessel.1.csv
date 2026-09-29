@@ -1,5 +1,44 @@
-id,t,x,y,z,sog,cog,action
-1,0,634.1,45.8,0,1.5,0,
-2,0,1130,296,0,2.0,0,fishing(10|25|0.25)
-3,0,900,114,0,1.5,0,anchor(1.5)
-3,0,914.6,232.8,0,1.5,0,fishing(10|25|0.25)
+id,t,x,y,z,sog,cog,action,comment
+1,0,717,133,0,1.5,0,,rerouted by soak: moved from 634.1 45.8
+2,0,721,139,0,1.5,0,,rerouted by soak: via water
+3,0,717,181,0,1.5,0,,rerouted by soak: via water
+4,0,709,189,0,1.5,0,,rerouted by soak: via water
+5,0,657,247,0,0.96,0,,rerouted by soak: via water
+6,0,681,371,0,0.6144,0,,rerouted by soak: via water
+7,0,725.1,418,0,0.768,0,,rerouted by soak: via water
+8,0,727,447,0,1.2,0,,rerouted by soak: via water
+9,0,767,471,0,1.5,0,,rerouted by soak: via water
+10,0,937,429,0,1.5,0,,rerouted by soak: via water
+11,0,989,369,0,1.5,0,,rerouted by soak: via water
+12,0,991,347,0,2.0,0,fishing(10|0.9|0.25),rerouted by soak: moved from 1130 296; soak plan fix: fishing step 25 -> 0.9 to stay on water
+13,0,983,383,0,2.0,0,,rerouted by soak: via water
+14,0,815,471,0,2.0,0,,rerouted by soak: via water
+15,0,731,451,0,1.28,0,,rerouted by soak: via water
+16,0,726.5,423.5,0,1.024,0,,rerouted by soak: via water
+17,0,724.5,416.2,0,1.6,0,,rerouted by soak: via water
+18,0,657,313,0,2.0,0,,rerouted by soak: via water
+19,0,687,203,0,2.0,0,,rerouted by soak: via water
+20,0,710.4,190.4,0,2.0,0,,rerouted by soak: via water
+21,0,729,167,0,2.0,0,,rerouted by soak: via water
+22,0,759,159,0,2.0,0,,rerouted by soak: via water
+23,0,774.3,167.2,0,2.0,0,,rerouted by soak: via water
+24,0,775,171,0,2.0,0,,rerouted by soak: via water
+25,0,779,171,0,2.0,0,,rerouted by soak: via water
+26,0,783,171,0,1.5,0,anchor(1.5),rerouted by soak: moved from 900 114
+27,0,779,171,0,0.4915,0,,rerouted by soak: via water
+28,0,770.3,162.3,0,0.45,0,,rerouted by soak: via water
+29,0,755.4,159.9,0,0.6144,0,,rerouted by soak: via water
+30,0,717,181,0,1.2,0,,rerouted by soak: via water
+31,0,709,189,0,1.5,0,,rerouted by soak: via water
+32,0,657,247,0,1.5,0,,rerouted by soak: via water
+33,0,681,371,0,0.768,0,,rerouted by soak: via water
+34,0,724.3,408.5,0,0.768,0,,rerouted by soak: via water
+35,0,727,445,0,1.5,0,,rerouted by soak: via water
+36,0,738.1,459.4,0,1.5,0,,rerouted by soak: via water
+37,0,823.5,437.5,0,1.5,0,,rerouted by soak: via water
+38,0,855,425,0,1.5,0,,rerouted by soak: via water
+39,0,869,421,0,1.5,0,,rerouted by soak: via water
+40,0,903.2,362.2,0,1.5,0,,rerouted by soak: via water
+41,0,909,313,0,1.5,0,,rerouted by soak: via water
+42,0,913,309,0,1.5,0,,rerouted by soak: via water
+43,0,915,309,0,1.5,0,fishing(10|0.7|0.25),rerouted by soak: moved from 914.6 232.8; soak plan fix: fishing step 25 -> 0.7 to stay on water
