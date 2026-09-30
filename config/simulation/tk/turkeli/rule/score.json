@@ -37,10 +37,10 @@
             "penalty": 100,
             "filter":["bedc897f-512b-45a2-aea4-bcfc248d2a86"]
         },
-        "Turkeli.Harbour.SpeedLimit":{
+        "Turkeli.Bosphorous.SpeedLimit":{
             "fact":"traffic",
             "concern":"Violation.SpeedLimit",
-            "penalty": 3,
+            "penalty": 10000,
             "filter":["bedc897f-512b-45a2-aea4-bcfc248d2a86"]
         },
         "Turkeli.Bosphorous.DeepDraft":{
