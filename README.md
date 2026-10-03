@@ -18,3 +18,5 @@ poetry run ../cospy-data/sim.sh trondheim
 Any folder under `config/simulation/<country>/` is a valid location.
 
 Full documentation: [docs/overview.md](docs/overview.md).
+
+Pictures of each location: [docs/gallery.md](docs/gallery.md).
