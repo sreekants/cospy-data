@@ -19,4 +19,17 @@ Any folder under `config/simulation/<country>/` is a valid location.
 
 Full documentation: [docs/overview.md](docs/overview.md).
 
-Pictures of each location: [docs/gallery.md](docs/gallery.md).
+## Gallery
+
+<table>
+<tr>
+<td align="center" width="50%"><a href="docs/images/de-bremen.png" target="_blank"><img src="docs/images/de-bremen.png" width="400" alt="Bremen"></a><br><b>Bremen</b> · <code>de/bremen</code></td>
+<td align="center" width="50%"><a href="docs/images/no-trondheim.png" target="_blank"><img src="docs/images/no-trondheim.png" width="400" alt="Trondheim"></a><br><b>Trondheim</b> · <code>no/trondheim</code></td>
+</tr>
+<tr>
+<td align="center"><a href="docs/images/sg-singapore.png" target="_blank"><img src="docs/images/sg-singapore.png" width="400" alt="Singapore"></a><br><b>Singapore</b> · <code>sg/singapore</code></td>
+<td align="center"><a href="docs/images/dk-copenhagen.png" target="_blank"><img src="docs/images/dk-copenhagen.png" width="400" alt="Copenhagen"></a><br><b>Copenhagen</b> · <code>dk/copenhagen</code></td>
+</tr>
+</table>
+
+All locations: [docs/gallery.md](docs/gallery.md).
