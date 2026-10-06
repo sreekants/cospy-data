@@ -1,0 +1,99 @@
+# Description:  Hamburg local rules - restricted and regulated zones
+# Generated:    by .claude/skills/mapgen/legata_site.py from config/map/de/hamburg/sea.s3db (MAPGEN §4.3); regenerate, do not edit
+# Zone:         (OwnShip,TrafficSeparationScheme) is the zone the vessel is in, of the types the ZoneRule module in rules.yaml watches
+
+# Speed limit 10 kn (5.14 m/s) - harbour Hamburg.Harbour
+clause['Hamburg.Harbour.Speed']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Hamburg.Harbour.1', 'Hamburg.Harbour.2', 'Hamburg.Harbour.3', 'Hamburg.Harbour.4', 'Hamburg.Harbour.5', 'Hamburg.Harbour.6', 'Hamburg.Harbour.7', 'Hamburg.Harbour.8', 'Hamburg.Harbour.9', 'Hamburg.Harbour.10', 'Hamburg.Harbour.11', 'Hamburg.Harbour.12', 'Hamburg.Harbour.13', 'Hamburg.Harbour.14', 'Hamburg.Harbour.15', 'Hamburg.Harbour.16', 'Hamburg.Harbour.17', 'Hamburg.Harbour.18', 'Hamburg.Harbour.19', 'Hamburg.Harbour.20', 'Hamburg.Harbour.21', 'Hamburg.Harbour.22', 'Hamburg.Harbour.23', 'Hamburg.Harbour.24']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Velocity <= 5.14
+            }
+    }
+}
+
+# No anchoring - harbour Hamburg.Harbour
+clause['Hamburg.Harbour.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Hamburg.Harbour.1', 'Hamburg.Harbour.2', 'Hamburg.Harbour.3', 'Hamburg.Harbour.4', 'Hamburg.Harbour.5', 'Hamburg.Harbour.6', 'Hamburg.Harbour.7', 'Hamburg.Harbour.8', 'Hamburg.Harbour.9', 'Hamburg.Harbour.10', 'Hamburg.Harbour.11', 'Hamburg.Harbour.12', 'Hamburg.Harbour.13', 'Hamburg.Harbour.14', 'Hamburg.Harbour.15', 'Hamburg.Harbour.16', 'Hamburg.Harbour.17', 'Hamburg.Harbour.18', 'Hamburg.Harbour.19', 'Hamburg.Harbour.20', 'Hamburg.Harbour.21', 'Hamburg.Harbour.22', 'Hamburg.Harbour.23', 'Hamburg.Harbour.24']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# No fishing - restricted or precautionary area Hamburg.PrecautionaryArea.FischschonbezirkStor (osm:way/356784868)
+clause['Hamburg.PrecautionaryArea.FischschonbezirkStor.NoFishing']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Hamburg.PrecautionaryArea.FischschonbezirkStor.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No fishing - restricted or precautionary area Hamburg.PrecautionaryArea.FischschonbezirkPinnauSperrwerk (osm:way/356784871)
+clause['Hamburg.PrecautionaryArea.FischschonbezirkPinnauSperrwerk.NoFishing']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Hamburg.PrecautionaryArea.FischschonbezirkPinnauSperrwerk.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No anchoring - restricted or precautionary area Hamburg.PrecautionaryArea.8 (osm:way/1311031747)
+clause['Hamburg.PrecautionaryArea.8.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Hamburg.PrecautionaryArea.8.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# No anchoring - restricted or precautionary area Hamburg.PrecautionaryArea.9 (osm:way/1311031750)
+clause['Hamburg.PrecautionaryArea.9.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Hamburg.PrecautionaryArea.9.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# No anchoring - restricted or precautionary area Hamburg.PrecautionaryArea.10 (osm:way/1311031752)
+clause['Hamburg.PrecautionaryArea.10.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Hamburg.PrecautionaryArea.10.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# No fishing - restricted or precautionary area Hamburg.PrecautionaryArea.FischschonbezirkKruckau (osm:relation/18719862)
+clause['Hamburg.PrecautionaryArea.FischschonbezirkKruckau.NoFishing']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Hamburg.PrecautionaryArea.FischschonbezirkKruckau.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}

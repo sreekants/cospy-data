@@ -1,0 +1,75 @@
+# Description:  Trondheim local rules - restricted and regulated zones
+# Generated:    by .claude/skills/mapgen/legata_site.py from config/map/no/trondheim/sea.s3db (MAPGEN §4.3); regenerate, do not edit
+# Zone:         (OwnShip,TrafficSeparationScheme) is the zone the vessel is in, of the types the ZoneRule module in rules.yaml watches
+
+# Speed limit 10 kn (5.14 m/s) - fairway Trondheim.SpeedLimit.Frosta.10kn
+clause['Trondheim.SpeedLimit.Frosta.10kn.Speed']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Trondheim.SpeedLimit.Frosta.10kn.1', 'Trondheim.SpeedLimit.Frosta.10kn.2']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Velocity <= 5.14
+            }
+    }
+}
+
+# Speed limit 5 kn (2.57 m/s) - fairway Trondheim.SpeedLimit.Frosta.5kn
+clause['Trondheim.SpeedLimit.Frosta.5kn.Speed']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Trondheim.SpeedLimit.Frosta.5kn.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Velocity <= 2.57
+            }
+    }
+}
+
+# nature reserve Trondheim.NatureReserve.VinnanOgVelvangen (miljodir:VV00002240): restricted entry (by permit or season); not modelled as a clause
+
+# No anchoring - nature reserve Trondheim.NatureReserve.Tauterryggen (miljodir:VV00003080)
+clause['Trondheim.NatureReserve.Tauterryggen.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Trondheim.NatureReserve.Tauterryggen.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# No entry except fishing vessels - nature reserve Trondheim.NatureReserve.Tautra (miljodir:VV00000697)
+clause['Trondheim.NatureReserve.Tautra.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Trondheim.NatureReserve.Tautra.1', 'Trondheim.NatureReserve.Tautra.2']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation not in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# Speed limit 10 kn (5.14 m/s) - nature reserve Trondheim.NatureReserve.Tautra (miljodir:VV00000697)
+clause['Trondheim.NatureReserve.Tautra.Speed']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Trondheim.NatureReserve.Tautra.1', 'Trondheim.NatureReserve.Tautra.2']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Velocity <= 5.14
+            }
+    }
+}
+
+# nature reserve Trondheim.NatureReserve.Raudkamlia (miljodir:VV00003566): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Trondheim.NatureReserve.Rodberget (miljodir:VV00003235): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Trondheim.NatureReserve.Oksningen (miljodir:VV00002269): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Trondheim.NatureReserve.Svaet25 (miljodir:VV00003624): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Trondheim.NatureReserve.Berga (miljodir:VV00003460): restricted entry (by permit or season); not modelled as a clause

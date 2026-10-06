@@ -1,0 +1,267 @@
+# Description:  Gdansk local rules - restricted and regulated zones
+# Generated:    by .claude/skills/mapgen/legata_site.py from config/map/po/gdansk/sea.s3db (MAPGEN §4.3); regenerate, do not edit
+# Zone:         (OwnShip,TrafficSeparationScheme) is the zone the vessel is in, of the types the ZoneRule module in rules.yaml watches
+
+# Military area: no entry (activation is not modelled, so always closed) - military area Gdansk.MilitaryArea.Strefa11 (osm:way/234810187)
+clause['Gdansk.MilitaryArea.Strefa11.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.MilitaryArea.Strefa11.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No fishing - military area Gdansk.MilitaryArea.Strefa14ZamknietaDlaRybolowstwa (osm:way/234810190)
+clause['Gdansk.MilitaryArea.Strefa14ZamknietaDlaRybolowstwa.NoFishing']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.MilitaryArea.Strefa14ZamknietaDlaRybolowstwa.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# Military area: no entry (permanently closed) - military area Gdansk.MilitaryArea.Strefa15ZamknietaDlaZeglugiIRybo (osm:way/234810191)
+clause['Gdansk.MilitaryArea.Strefa15ZamknietaDlaZeglugiIRybo.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.MilitaryArea.Strefa15ZamknietaDlaZeglugiIRybo.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No fishing - military area Gdansk.MilitaryArea.Strefa15ZamknietaDlaZeglugiIRybo (osm:way/234810191)
+clause['Gdansk.MilitaryArea.Strefa15ZamknietaDlaZeglugiIRybo.NoFishing']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.MilitaryArea.Strefa15ZamknietaDlaZeglugiIRybo.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# Military area: no entry (periodically closed; activation is not modelled, so always closed) - military area Gdansk.MilitaryArea.Strefa1aOkresowoZamykanaDlaZeglu (osm:way/234810192)
+clause['Gdansk.MilitaryArea.Strefa1aOkresowoZamykanaDlaZeglu.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.MilitaryArea.Strefa1aOkresowoZamykanaDlaZeglu.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# Military area: no entry (periodically closed; activation is not modelled, so always closed) - military area Gdansk.MilitaryArea.Strefa1bOkresowoZamykanaDlaZeglu (osm:way/234810194)
+clause['Gdansk.MilitaryArea.Strefa1bOkresowoZamykanaDlaZeglu.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.MilitaryArea.Strefa1bOkresowoZamykanaDlaZeglu.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# Military area: no entry (periodically closed; activation is not modelled, so always closed) - military area Gdansk.MilitaryArea.Strefa2OkresowoZamykanaDlaZeglug (osm:way/234810195)
+clause['Gdansk.MilitaryArea.Strefa2OkresowoZamykanaDlaZeglug.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.MilitaryArea.Strefa2OkresowoZamykanaDlaZeglug.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No fishing - military area Gdansk.MilitaryArea.Strefa3ZamknietaDlaRybolowstwa (osm:way/234810196)
+clause['Gdansk.MilitaryArea.Strefa3ZamknietaDlaRybolowstwa.NoFishing']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.MilitaryArea.Strefa3ZamknietaDlaRybolowstwa.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# Military area: no entry (activation is not modelled, so always closed) - military area Gdansk.MilitaryArea.Strefa4 (osm:way/234810197)
+clause['Gdansk.MilitaryArea.Strefa4.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.MilitaryArea.Strefa4.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# Military area: no entry (periodically closed; activation is not modelled, so always closed) - military area Gdansk.MilitaryArea.Strefa5OkresowoZamykanaDlaZeglug (osm:way/234810198)
+clause['Gdansk.MilitaryArea.Strefa5OkresowoZamykanaDlaZeglug.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.MilitaryArea.Strefa5OkresowoZamykanaDlaZeglug.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - area to avoid Gdansk.AreaToAvoid.1 (osm:way/985819020)
+clause['Gdansk.AreaToAvoid.1.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.AreaToAvoid.1.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No fishing - restricted or precautionary area Gdansk.PrecautionaryArea.1 (osm:way/1109004310)
+clause['Gdansk.PrecautionaryArea.1.NoFishing']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.PrecautionaryArea.1.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - area to avoid Gdansk.AreaToAvoid.2 (osm:way/1181409492)
+clause['Gdansk.AreaToAvoid.2.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.AreaToAvoid.2.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# Military area: no entry (activation is not modelled, so always closed) - military area Gdansk.MilitaryArea.AkwenZabronionyDlaKapieliPlywani (osm:relation/9653664)
+clause['Gdansk.MilitaryArea.AkwenZabronionyDlaKapieliPlywani.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.MilitaryArea.AkwenZabronionyDlaKapieliPlywani.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - area to avoid Gdansk.AreaToAvoid.3 (osm:relation/13047437)
+clause['Gdansk.AreaToAvoid.3.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.AreaToAvoid.3.1', 'Gdansk.AreaToAvoid.3.2']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No anchoring - area to avoid Gdansk.AreaToAvoid.3 (osm:relation/13047437)
+clause['Gdansk.AreaToAvoid.3.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.AreaToAvoid.3.1', 'Gdansk.AreaToAvoid.3.2']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# No fishing - area to avoid Gdansk.AreaToAvoid.3 (osm:relation/13047437)
+clause['Gdansk.AreaToAvoid.3.NoFishing']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.AreaToAvoid.3.1', 'Gdansk.AreaToAvoid.3.2']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - area to avoid Gdansk.AreaToAvoid.4 (osm:relation/13250677)
+clause['Gdansk.AreaToAvoid.4.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.AreaToAvoid.4.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - area to avoid Gdansk.AreaToAvoid.5 (osm:relation/13250678)
+clause['Gdansk.AreaToAvoid.5.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.AreaToAvoid.5.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - area to avoid Gdansk.AreaToAvoid.6 (osm:relation/13329976)
+clause['Gdansk.AreaToAvoid.6.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.AreaToAvoid.6.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - area to avoid Gdansk.AreaToAvoid.7 (osm:relation/13329977)
+clause['Gdansk.AreaToAvoid.7.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.AreaToAvoid.7.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - area to avoid Gdansk.AreaToAvoid.8 (osm:relation/13329978)
+clause['Gdansk.AreaToAvoid.8.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.AreaToAvoid.8.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}

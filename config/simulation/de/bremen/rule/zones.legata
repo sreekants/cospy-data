@@ -1,0 +1,229 @@
+# Description:  Bremen local rules - restricted and regulated zones
+# Generated:    by .claude/skills/mapgen/legata_site.py from config/map/de/bremen/sea.s3db (MAPGEN §4.3); regenerate, do not edit
+# Zone:         (OwnShip,TrafficSeparationScheme) is the zone the vessel is in, of the types the ZoneRule module in rules.yaml watches
+
+# No anchoring - restricted or precautionary area Bremen.PrecautionaryArea.1 (osm:way/567011986)
+clause['Bremen.PrecautionaryArea.1.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bremen.PrecautionaryArea.1.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# No fishing - restricted or precautionary area Bremen.PrecautionaryArea.1 (osm:way/567011986)
+clause['Bremen.PrecautionaryArea.1.NoFishing']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bremen.PrecautionaryArea.1.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - area to avoid Bremen.AreaToAvoid.1 (osm:way/1094214861)
+clause['Bremen.AreaToAvoid.1.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bremen.AreaToAvoid.1.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - nature reserve Bremen.NatureReserve.1 (osm:way/1279342660)
+clause['Bremen.NatureReserve.1.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bremen.NatureReserve.1.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - nature reserve Bremen.NatureReserve.2 (osm:way/1279342662)
+clause['Bremen.NatureReserve.2.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bremen.NatureReserve.2.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - nature reserve Bremen.NatureReserve.3 (osm:way/1279342665)
+clause['Bremen.NatureReserve.3.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bremen.NatureReserve.3.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - nature reserve Bremen.NatureReserve.4 (osm:way/1279342666)
+clause['Bremen.NatureReserve.4.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bremen.NatureReserve.4.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - nature reserve Bremen.NatureReserve.9 (osm:way/1279342687)
+clause['Bremen.NatureReserve.9.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bremen.NatureReserve.9.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - nature reserve Bremen.NatureReserve.11 (osm:way/1279342692)
+clause['Bremen.NatureReserve.11.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bremen.NatureReserve.11.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - nature reserve Bremen.NatureReserve.12 (osm:way/1279342693)
+clause['Bremen.NatureReserve.12.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bremen.NatureReserve.12.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - nature reserve Bremen.NatureReserve.14 (osm:way/1279342703)
+clause['Bremen.NatureReserve.14.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bremen.NatureReserve.14.1', 'Bremen.NatureReserve.14.2']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - nature reserve Bremen.NatureReserve.15 (osm:way/1279342704)
+clause['Bremen.NatureReserve.15.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bremen.NatureReserve.15.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - nature reserve Bremen.NatureReserve.16 (osm:way/1279342712)
+clause['Bremen.NatureReserve.16.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bremen.NatureReserve.16.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - nature reserve Bremen.NatureReserve.17 (osm:way/1279342713)
+clause['Bremen.NatureReserve.17.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bremen.NatureReserve.17.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - nature reserve Bremen.NatureReserve.18 (osm:way/1279342714)
+clause['Bremen.NatureReserve.18.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bremen.NatureReserve.18.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# nature reserve Bremen.NatureReserve.RuhezoneI31 (osm:relation/16774626): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Bremen.NatureReserve.RuhezoneI35 (osm:relation/16774696): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Bremen.NatureReserve.RuhezoneI3523 (osm:relation/16774716): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Bremen.NatureReserve.RuhezoneI36 (osm:relation/16774751): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Bremen.NatureReserve.RuhezoneI38 (osm:relation/16783024): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Bremen.NatureReserve.RuhezoneI3626 (osm:relation/16783025): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Bremen.NatureReserve.RuhezoneI3627 (osm:relation/16783107): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Bremen.NatureReserve.RuhezoneI37 (osm:relation/16783164): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Bremen.NatureReserve.RuhezoneI45 (osm:relation/16783207): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Bremen.NatureReserve.RuhezoneI44 (osm:relation/16783217): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Bremen.NatureReserve.RuhezoneI46 (osm:relation/16783227): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Bremen.NatureReserve.RuhezoneI43 (osm:relation/16793524): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Bremen.NatureReserve.RuhezoneI40 (osm:relation/16793551): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Bremen.NatureReserve.RuhezoneI41 (osm:relation/16793552): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Bremen.NatureReserve.RuhezoneI47 (osm:relation/16793958): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Bremen.NatureReserve.RuhezoneI42 (osm:relation/16798984): restricted entry (by permit or season); not modelled as a clause
+
+# No entry - nature reserve Bremen.NatureReserve.40 (osm:relation/17552867)
+clause['Bremen.NatureReserve.40.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bremen.NatureReserve.40.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# nature reserve Bremen.NatureReserve.42 (osm:relation/17555960): restricted entry (by permit or season); not modelled as a clause

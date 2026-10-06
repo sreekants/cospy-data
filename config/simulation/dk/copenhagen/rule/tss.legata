@@ -1,0 +1,207 @@
+# Description:  Copenhagen local rules - traffic separation scheme (COLREG Rule 10)
+# Generated:    by .claude/skills/mapgen/legata_site.py from config/map/dk/copenhagen/sea.s3db (MAPGEN §4.3); regenerate, do not edit
+# Zone:         (OwnShip,TrafficSeparationScheme) is the zone the vessel is in, of the types the ZoneRule module in rules.yaml watches
+
+# Rule 10(b)(i): proceed in Copenhagen.TSS.Northbound.4 in its general direction of traffic flow (Northbound; simulator heading 270, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Copenhagen.TSS.Northbound.4.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.TSS.Northbound.4.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(225, 315)) or (OwnShip.Heading in angle(345, 15)) or (OwnShip.Heading in angle(165, 195))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Copenhagen.TSS.Northbound.4
+clause['Copenhagen.TSS.Northbound.4.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.TSS.Northbound.4.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(b)(i): proceed in Copenhagen.TSS.Southbound.5 in its general direction of traffic flow (Southbound; simulator heading 90, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Copenhagen.TSS.Southbound.5.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.TSS.Southbound.5.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(45, 135)) or (OwnShip.Heading in angle(165, 195)) or (OwnShip.Heading in angle(345, 15))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Copenhagen.TSS.Southbound.5
+clause['Copenhagen.TSS.Southbound.5.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.TSS.Southbound.5.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(b)(i): proceed in Copenhagen.TSS.Southbound.6 in its general direction of traffic flow (Southbound; simulator heading 90, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Copenhagen.TSS.Southbound.6.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.TSS.Southbound.6.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(45, 135)) or (OwnShip.Heading in angle(165, 195)) or (OwnShip.Heading in angle(345, 15))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Copenhagen.TSS.Southbound.6
+clause['Copenhagen.TSS.Southbound.6.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.TSS.Southbound.6.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(b)(i): proceed in Copenhagen.TSS.Southbound.7 in its general direction of traffic flow (Southbound; simulator heading 90, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Copenhagen.TSS.Southbound.7.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.TSS.Southbound.7.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(45, 135)) or (OwnShip.Heading in angle(165, 195)) or (OwnShip.Heading in angle(345, 15))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Copenhagen.TSS.Southbound.7
+clause['Copenhagen.TSS.Southbound.7.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.TSS.Southbound.7.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(b)(i): proceed in Copenhagen.TSS.NorthwestBound.9 in its general direction of traffic flow (NorthwestBound; simulator heading 225, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Copenhagen.TSS.NorthwestBound.9.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.TSS.NorthwestBound.9.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(180, 270)) or (OwnShip.Heading in angle(300, 330)) or (OwnShip.Heading in angle(120, 150))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Copenhagen.TSS.NorthwestBound.9
+clause['Copenhagen.TSS.NorthwestBound.9.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.TSS.NorthwestBound.9.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(b)(i): proceed in Copenhagen.TSS.Westbound.11 in its general direction of traffic flow (Westbound; simulator heading 180, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Copenhagen.TSS.Westbound.11.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.TSS.Westbound.11.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(135, 225)) or (OwnShip.Heading in angle(255, 285)) or (OwnShip.Heading in angle(75, 105))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Copenhagen.TSS.Westbound.11
+clause['Copenhagen.TSS.Westbound.11.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.TSS.Westbound.11.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(b)(i): proceed in Copenhagen.TSS.Northbound.12 in its general direction of traffic flow (Northbound; simulator heading 270, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Copenhagen.TSS.Northbound.12.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.TSS.Northbound.12.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(225, 315)) or (OwnShip.Heading in angle(345, 15)) or (OwnShip.Heading in angle(165, 195))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Copenhagen.TSS.Northbound.12
+clause['Copenhagen.TSS.Northbound.12.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.TSS.Northbound.12.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(b)(i): proceed in Copenhagen.TSS.Southbound.13 in its general direction of traffic flow (Southbound; simulator heading 90, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Copenhagen.TSS.Southbound.13.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.TSS.Southbound.13.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(45, 135)) or (OwnShip.Heading in angle(165, 195)) or (OwnShip.Heading in angle(345, 15))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Copenhagen.TSS.Southbound.13
+clause['Copenhagen.TSS.Southbound.13.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.TSS.Southbound.13.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(e): do not enter Copenhagen.TSS.SeparationZone.1 except to cross, join or leave a lane, in an emergency, or to fish in it
+clause['Copenhagen.TSS.SeparationZone.1.Entry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.TSS.SeparationZone.1.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation not in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}

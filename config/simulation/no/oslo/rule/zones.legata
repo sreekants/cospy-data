@@ -1,0 +1,273 @@
+# Description:  Oslo local rules - restricted and regulated zones
+# Generated:    by .claude/skills/mapgen/legata_site.py from config/map/no/oslo/sea.s3db (MAPGEN §4.3); regenerate, do not edit
+# Zone:         (OwnShip,TrafficSeparationScheme) is the zone the vessel is in, of the types the ZoneRule module in rules.yaml watches
+
+# No entry - area to avoid Oslo.Protected.Asker.0kn
+clause['Oslo.Protected.Asker.0kn.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Oslo.Protected.Asker.0kn.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# Speed limit 0 kn (0.00 m/s) - area to avoid Oslo.Protected.Asker.0kn
+clause['Oslo.Protected.Asker.0kn.Speed']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Oslo.Protected.Asker.0kn.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Velocity <= 0.00
+            }
+    }
+}
+
+# Speed limit 5 kn (2.57 m/s) - fairway Oslo.SpeedLimit.Frogn.5kn
+clause['Oslo.SpeedLimit.Frogn.5kn.Speed']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Oslo.SpeedLimit.Frogn.5kn.1', 'Oslo.SpeedLimit.Frogn.5kn.2', 'Oslo.SpeedLimit.Frogn.5kn.3', 'Oslo.SpeedLimit.Frogn.5kn.4', 'Oslo.SpeedLimit.Frogn.5kn.5', 'Oslo.SpeedLimit.Frogn.5kn.6', 'Oslo.SpeedLimit.Frogn.5kn.7']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Velocity <= 2.57
+            }
+    }
+}
+
+# Speed limit 5 kn (2.57 m/s) - fairway Oslo.SpeedLimit.Nesodden.5kn
+clause['Oslo.SpeedLimit.Nesodden.5kn.Speed']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Oslo.SpeedLimit.Nesodden.5kn.1', 'Oslo.SpeedLimit.Nesodden.5kn.2', 'Oslo.SpeedLimit.Nesodden.5kn.3', 'Oslo.SpeedLimit.Nesodden.5kn.4', 'Oslo.SpeedLimit.Nesodden.5kn.5']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Velocity <= 2.57
+            }
+    }
+}
+
+# Speed limit 8 kn (4.12 m/s) - fairway Oslo.SpeedLimit.Asker-Bærum.8kn
+clause['Oslo.SpeedLimit.Asker-Bærum.8kn.Speed']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Oslo.SpeedLimit.Asker-Bærum.8kn.1', 'Oslo.SpeedLimit.Asker-Bærum.8kn.2', 'Oslo.SpeedLimit.Asker-Bærum.8kn.3', 'Oslo.SpeedLimit.Asker-Bærum.8kn.4', 'Oslo.SpeedLimit.Asker-Bærum.8kn.5', 'Oslo.SpeedLimit.Asker-Bærum.8kn.6', 'Oslo.SpeedLimit.Asker-Bærum.8kn.7', 'Oslo.SpeedLimit.Asker-Bærum.8kn.8', 'Oslo.SpeedLimit.Asker-Bærum.8kn.9', 'Oslo.SpeedLimit.Asker-Bærum.8kn.10', 'Oslo.SpeedLimit.Asker-Bærum.8kn.11']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Velocity <= 4.12
+            }
+    }
+}
+
+# Speed limit 8 kn (4.12 m/s) - fairway Oslo.SpeedLimit.Oslo.8kn
+clause['Oslo.SpeedLimit.Oslo.8kn.Speed']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Oslo.SpeedLimit.Oslo.8kn.1', 'Oslo.SpeedLimit.Oslo.8kn.2']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Velocity <= 4.12
+            }
+    }
+}
+
+# Speed limit 25 kn (12.86 m/s) - fairway Oslo.SpeedLimit.Nesodden.25kn
+clause['Oslo.SpeedLimit.Nesodden.25kn.Speed']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Oslo.SpeedLimit.Nesodden.25kn.1', 'Oslo.SpeedLimit.Nesodden.25kn.2', 'Oslo.SpeedLimit.Nesodden.25kn.3', 'Oslo.SpeedLimit.Nesodden.25kn.4', 'Oslo.SpeedLimit.Nesodden.25kn.5']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Velocity <= 12.86
+            }
+    }
+}
+
+# Speed limit 25 kn (12.86 m/s) - fairway Oslo.SpeedLimit.Oslo.25kn
+clause['Oslo.SpeedLimit.Oslo.25kn.Speed']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Oslo.SpeedLimit.Oslo.25kn.1', 'Oslo.SpeedLimit.Oslo.25kn.2', 'Oslo.SpeedLimit.Oslo.25kn.3', 'Oslo.SpeedLimit.Oslo.25kn.4', 'Oslo.SpeedLimit.Oslo.25kn.5']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Velocity <= 12.86
+            }
+    }
+}
+
+# nature reserve Oslo.NatureReserve.Spannslokket (miljodir:VV00001261): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Galteskjaer (miljodir:VV00002792): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Storskjaer (miljodir:VV00002796): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Ulvungene (miljodir:VV00000586): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Bjerkas (miljodir:VV00000914): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.OstreHovedoya (miljodir:VV00002407): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.NordreSkjaelholmen (miljodir:VV00002800): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Hjelpskjaera (miljodir:VV00002758): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.LilleBjerkoyskjaer (miljodir:VV00001784): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.MalmoyaOgMalmoykalven (miljodir:VV00000370): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Smaskjaer (miljodir:VV00002790): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.SlemmestadasenMorberg (miljodir:VV00002543): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Spirodden (miljodir:VV00001259): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Boroya (miljodir:VV00002681): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Koksabukta (miljodir:VV00000966): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Stakaskjaer (miljodir:VV00002797): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Padda (miljodir:VV00002694): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Kaffeskjaer (miljodir:VV00002788): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.NaturreservatSorForFuruholmen (miljodir:VV00000591): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Hovikskjaera (miljodir:VV00002756): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Mokkalassene (miljodir:VV00001633): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Bleikoya (miljodir:VV00002695): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Sorbyskogen (miljodir:VV00003599): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Langskjaer (miljodir:VV00002801): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Storskjaer46 (miljodir:VV00000768): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Nakholmen (miljodir:VV00000790): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Selskjaer (miljodir:VV00002802): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Kaninoya (miljodir:VV00000482): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Gasoya (miljodir:VV00002673): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Geitungsholmen (miljodir:VV00001039): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Hovedoya (miljodir:VV00002408): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Skogerholmen (miljodir:VV00002688): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.GressholmenRambergoya (miljodir:VV00000971): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Kjeholmen (miljodir:VV00002692): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Fyrsteila (miljodir:VV00002697): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Geitholmen (miljodir:VV00002674): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Husbergoya (miljodir:VV00002670): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.VestreHovedoya (miljodir:VV00002406): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.StoreHerbern (miljodir:VV00002684): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Kutangen (miljodir:VV00000407): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Lokenesskogen (miljodir:VV00002678): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Hovedoya78 (miljodir:VV00002405): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Langara (miljodir:VV00002679): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Alv (miljodir:VV00001786): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Terneholmen (miljodir:VV00001631): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Sandholmen (miljodir:VV00001602): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Tuskjaer (miljodir:VV00002794): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Flatskjaer (miljodir:VV00002791): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Viernbukta (miljodir:VV00000961): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.SondreSkjaelholmen (miljodir:VV00002672): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Hvalskjaeret (miljodir:VV00001605): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.TorvoyaOgBjerkholmen (miljodir:VV00002691): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Dokkskjaeret (miljodir:VV00002795): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Lagmannsholmen (miljodir:VV00000592): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Prinseskjaer (miljodir:VV00001632): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Kalvoya (miljodir:VV00000788): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Svartskjaera (miljodir:VV00001785): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Knerten (miljodir:VV00001783): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Bjerkoya (miljodir:VV00001258): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.NordreNaersnes (miljodir:VV00001041): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Vendelholmene (miljodir:VV00002677): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Lilleoya (miljodir:VV00002682): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Demmekilskjaera (miljodir:VV00002757): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.YtreVassholmen (miljodir:VV00001603): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Krakholmen (miljodir:VV00002799): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Paradisbukta (miljodir:VV00002693): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Killingen (miljodir:VV00000789): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.NordostreAskeskjaer (miljodir:VV00001601): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Ulykkesskjaer (miljodir:VV00001604): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Sundbyholmene (miljodir:VV00001639): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Huk (miljodir:VV00000766): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Heggholmen (miljodir:VV00002668): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Dyna (miljodir:VV00001042): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Terneskjaer (miljodir:VV00000730): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Rogneskjaer (miljodir:VV00002789): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Katterompa (miljodir:VV00002680): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Nakkeskjaer (miljodir:VV00002793): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Kavringen (miljodir:VV00001616): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Bjerkasholmen (miljodir:VV00000774): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Storoykilen (miljodir:VV00000423): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Graoya (miljodir:VV00002541): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Mellemskjaer (miljodir:VV00000724): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.SondreHaoya (miljodir:VV00001860): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Ildjernet (miljodir:VV00002696): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Oust (miljodir:VV00001980): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Lokeneshalvoya (miljodir:VV00002689): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Oslo.NatureReserve.Trolldalen (miljodir:VV00003471): restricted entry (by permit or season); not modelled as a clause

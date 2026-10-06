@@ -1,0 +1,177 @@
+# Description:  Copenhagen local rules - restricted and regulated zones
+# Generated:    by .claude/skills/mapgen/legata_site.py from config/map/dk/copenhagen/sea.s3db (MAPGEN §4.3); regenerate, do not edit
+# Zone:         (OwnShip,TrafficSeparationScheme) is the zone the vessel is in, of the types the ZoneRule module in rules.yaml watches
+
+# No entry - area to avoid Copenhagen.AreaToAvoid.1 (osm:way/384460271)
+clause['Copenhagen.AreaToAvoid.1.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.AreaToAvoid.1.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# restricted or precautionary area Copenhagen.PrecautionaryArea.1 (osm:way/400725606): restricted entry (by permit or season); not modelled as a clause
+
+# No anchoring - restricted or precautionary area Copenhagen.PrecautionaryArea.2 (osm:way/488216894)
+clause['Copenhagen.PrecautionaryArea.2.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.PrecautionaryArea.2.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Military area: no entry (activation is not modelled, so always closed) - military area Copenhagen.MilitaryArea.FladensLeje (osm:way/512390397)
+clause['Copenhagen.MilitaryArea.FladensLeje.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.MilitaryArea.FladensLeje.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# nature reserve Copenhagen.NatureReserve.1 (osm:way/1135374590): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Copenhagen.NatureReserve.2 (osm:way/1135374591): restricted entry (by permit or season); not modelled as a clause
+
+# No entry - nature reserve Copenhagen.NatureReserve.3 (osm:way/1160196744)
+clause['Copenhagen.NatureReserve.3.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.NatureReserve.3.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - nature reserve Copenhagen.NatureReserve.4 (osm:way/1160196745)
+clause['Copenhagen.NatureReserve.4.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.NatureReserve.4.1', 'Copenhagen.NatureReserve.4.2']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# Military area: no entry (activation is not modelled, so always closed) - military area Copenhagen.MilitaryArea.EKR18Jaegerspris (osm:way/1162802207)
+clause['Copenhagen.MilitaryArea.EKR18Jaegerspris.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.MilitaryArea.EKR18Jaegerspris.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - nature reserve Copenhagen.NatureReserve.5 (osm:way/1198249218)
+clause['Copenhagen.NatureReserve.5.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.NatureReserve.5.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - nature reserve Copenhagen.NatureReserve.6 (osm:way/1198306896)
+clause['Copenhagen.NatureReserve.6.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.NatureReserve.6.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - nature reserve Copenhagen.NatureReserve.7 (osm:way/1198306897)
+clause['Copenhagen.NatureReserve.7.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.NatureReserve.7.1', 'Copenhagen.NatureReserve.7.2']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No anchoring - restricted or precautionary area Copenhagen.PrecautionaryArea.3 (osm:way/1198572684)
+clause['Copenhagen.PrecautionaryArea.3.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.PrecautionaryArea.3.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# No fishing - restricted or precautionary area Copenhagen.PrecautionaryArea.3 (osm:way/1198572684)
+clause['Copenhagen.PrecautionaryArea.3.NoFishing']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.PrecautionaryArea.3.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No anchoring - restricted or precautionary area Copenhagen.PrecautionaryArea.4 (osm:way/1412596244)
+clause['Copenhagen.PrecautionaryArea.4.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.PrecautionaryArea.4.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# No entry - area to avoid Copenhagen.AreaToAvoid.2 (osm:way/1508260306)
+clause['Copenhagen.AreaToAvoid.2.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.AreaToAvoid.2.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - nature reserve Copenhagen.NatureReserve.MaklappensNaturreservat (osm:relation/1460564)
+clause['Copenhagen.NatureReserve.MaklappensNaturreservat.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Copenhagen.NatureReserve.MaklappensNaturreservat.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}

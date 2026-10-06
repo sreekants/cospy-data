@@ -1,0 +1,51 @@
+# Description:  Oslo local rules - traffic separation scheme (COLREG Rule 10)
+# Generated:    by .claude/skills/mapgen/legata_site.py from config/map/no/oslo/sea.s3db (MAPGEN §4.3); regenerate, do not edit
+# Zone:         (OwnShip,TrafficSeparationScheme) is the zone the vessel is in, of the types the ZoneRule module in rules.yaml watches
+
+# Rule 10(b)(i): proceed in Oslo.TSS.NortheastBound.1 in its general direction of traffic flow (NortheastBound; simulator heading 315, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Oslo.TSS.NortheastBound.1.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Oslo.TSS.NortheastBound.1.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(270, 0)) or (OwnShip.Heading in angle(30, 60)) or (OwnShip.Heading in angle(210, 240))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Oslo.TSS.NortheastBound.1
+clause['Oslo.TSS.NortheastBound.1.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Oslo.TSS.NortheastBound.1.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(b)(i): proceed in Oslo.TSS.SouthwestBound.2 in its general direction of traffic flow (SouthwestBound; simulator heading 135, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Oslo.TSS.SouthwestBound.2.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Oslo.TSS.SouthwestBound.2.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(90, 180)) or (OwnShip.Heading in angle(210, 240)) or (OwnShip.Heading in angle(30, 60))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Oslo.TSS.SouthwestBound.2
+clause['Oslo.TSS.SouthwestBound.2.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Oslo.TSS.SouthwestBound.2.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}

@@ -134,13 +134,20 @@ concerns:
     collision.cost: traffic      # hull damage, as damage_other_vessel in Rl
     COLREG: traffic
 
-    # Event ids named by the local-rule scorecards (rule/score.json)
+    # Event ids named by the local-rule scorecards (rule/score.yaml)
     Violation.BerthingRisk: safety
     Violation.DeepDraft: safety
     Violation.DistanceKeeping: traffic
     Violation.HazardousTransport: environmental
     Violation.SpeedLimit: traffic
     Violation.WrongDirection: traffic
+    # Event ids named by the zone rules generated from the map (mapgen legata_site.py)
+    Violation.SeparationZone: traffic
+    Violation.RestrictedArea: safety
+    Violation.MilitaryArea: safety
+    Violation.NatureReserve: environmental
+    Violation.Anchoring: operational
+    Violation.Fishing: environmental
 
 # How findings are counted, so a condition that persists is one finding and
 # not one per tick (REQ.019). Times are seconds of the simulation clock.

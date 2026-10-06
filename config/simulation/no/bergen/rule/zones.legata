@@ -1,0 +1,277 @@
+# Description:  Bergen local rules - restricted and regulated zones
+# Generated:    by .claude/skills/mapgen/legata_site.py from config/map/no/bergen/sea.s3db, sea-hifi2.s3db (MAPGEN §4.3); regenerate, do not edit
+# Zone:         (OwnShip,TrafficSeparationScheme) is the zone the vessel is in, of the types the ZoneRule module in rules.yaml watches
+
+# Speed limit 8 kn (4.12 m/s) - speed-restricted reach Bergen.SpeedZone.Bergen8Kn (kystverket:layer_762)
+clause['Bergen.SpeedZone.Bergen8Kn.Speed']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bergen.SpeedZone.Bergen8Kn.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Velocity <= 4.12
+            }
+    }
+}
+
+# Speed limit 5 kn (2.57 m/s) - speed-restricted reach Bergen.SpeedZone.Bergen5Kn (kystverket:layer_762)
+clause['Bergen.SpeedZone.Bergen5Kn.Speed']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bergen.SpeedZone.Bergen5Kn.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Velocity <= 2.57
+            }
+    }
+}
+
+# Speed limit 5 kn (2.57 m/s) - speed-restricted reach Bergen.SpeedZone.Oygarden5Kn (kystverket:layer_762)
+clause['Bergen.SpeedZone.Oygarden5Kn.Speed']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bergen.SpeedZone.Oygarden5Kn.1', 'Bergen.SpeedZone.Oygarden5Kn.2', 'Bergen.SpeedZone.Oygarden5Kn.3']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Velocity <= 2.57
+            }
+    }
+}
+
+# Military area: no entry (activation is not modelled, so always closed) - military area Bergen.MilitaryArea.Korsnes (forsvarsbygg:forskrift-2024-06-24-1311)
+clause['Bergen.MilitaryArea.Korsnes.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bergen.MilitaryArea.Korsnes.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No anchoring - military area Bergen.MilitaryArea.Korsnes (forsvarsbygg:forskrift-2024-06-24-1311)
+clause['Bergen.MilitaryArea.Korsnes.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bergen.MilitaryArea.Korsnes.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# No fishing - military area Bergen.MilitaryArea.Korsnes (forsvarsbygg:forskrift-2024-06-24-1311)
+clause['Bergen.MilitaryArea.Korsnes.NoFishing']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bergen.MilitaryArea.Korsnes.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# Military area: no entry (activation is not modelled, so always closed) - military area Bergen.MilitaryArea.Laksevag (forsvarsbygg:forskrift-2024-06-24-1311)
+clause['Bergen.MilitaryArea.Laksevag.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bergen.MilitaryArea.Laksevag.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No anchoring - military area Bergen.MilitaryArea.Laksevag (forsvarsbygg:forskrift-2024-06-24-1311)
+clause['Bergen.MilitaryArea.Laksevag.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bergen.MilitaryArea.Laksevag.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# No fishing - military area Bergen.MilitaryArea.Laksevag (forsvarsbygg:forskrift-2024-06-24-1311)
+clause['Bergen.MilitaryArea.Laksevag.NoFishing']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bergen.MilitaryArea.Laksevag.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# Military area: no entry (activation is not modelled, so always closed) - military area Bergen.MilitaryArea.Heggerneset (forsvarsbygg:forskrift-2024-06-24-1311)
+clause['Bergen.MilitaryArea.Heggerneset.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bergen.MilitaryArea.Heggerneset.1', 'Bergen.MilitaryArea.Heggerneset.2']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No anchoring - military area Bergen.MilitaryArea.Heggerneset (forsvarsbygg:forskrift-2024-06-24-1311)
+clause['Bergen.MilitaryArea.Heggerneset.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bergen.MilitaryArea.Heggerneset.1', 'Bergen.MilitaryArea.Heggerneset.2']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# No fishing - military area Bergen.MilitaryArea.Heggerneset (forsvarsbygg:forskrift-2024-06-24-1311)
+clause['Bergen.MilitaryArea.Heggerneset.NoFishing']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bergen.MilitaryArea.Heggerneset.1', 'Bergen.MilitaryArea.Heggerneset.2']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# Military area: no entry (activation is not modelled, so always closed) - military area Bergen.MilitaryArea.Herdla (forsvarsbygg:forskrift-2024-06-24-1311)
+clause['Bergen.MilitaryArea.Herdla.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bergen.MilitaryArea.Herdla.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No anchoring - military area Bergen.MilitaryArea.Herdla (forsvarsbygg:forskrift-2024-06-24-1311)
+clause['Bergen.MilitaryArea.Herdla.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bergen.MilitaryArea.Herdla.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# No fishing - military area Bergen.MilitaryArea.Herdla (forsvarsbygg:forskrift-2024-06-24-1311)
+clause['Bergen.MilitaryArea.Herdla.NoFishing']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bergen.MilitaryArea.Herdla.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# Military area: no entry (activation is not modelled, so always closed) - military area Bergen.MilitaryArea.HaakonsvernMKnappen (forsvarsbygg:forskrift-2024-06-24-1311)
+clause['Bergen.MilitaryArea.HaakonsvernMKnappen.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bergen.MilitaryArea.HaakonsvernMKnappen.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No anchoring - military area Bergen.MilitaryArea.HaakonsvernMKnappen (forsvarsbygg:forskrift-2024-06-24-1311)
+clause['Bergen.MilitaryArea.HaakonsvernMKnappen.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bergen.MilitaryArea.HaakonsvernMKnappen.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# No fishing - military area Bergen.MilitaryArea.HaakonsvernMKnappen (forsvarsbygg:forskrift-2024-06-24-1311)
+clause['Bergen.MilitaryArea.HaakonsvernMKnappen.NoFishing']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bergen.MilitaryArea.HaakonsvernMKnappen.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# nature reserve Bergen.NatureReserve.Hisdalen (miljodir:VV00001060): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Bergen.NatureReserve.Seloyskjera (miljodir:VV00001750): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Bergen.NatureReserve.Ertenoya (miljodir:VV00001755): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Bergen.NatureReserve.Lonoy (miljodir:VV00001629): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Bergen.NatureReserve.Ullebroten (miljodir:VV00001757): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Bergen.NatureReserve.Hanoyklubben (miljodir:VV00001754): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Bergen.NatureReserve.Ringaskjer (miljodir:VV00001725): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Bergen.NatureReserve.Laksholmen (miljodir:VV00001659): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Bergen.NatureReserve.Greipingen (miljodir:VV00001756): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Bergen.NatureReserve.LitleGasoySkarvoyOgStoreLambholm (miljodir:VV00001600): restricted entry (by permit or season); not modelled as a clause
+
+# nature reserve Bergen.NatureReserve.Krossfjorden (miljodir:VV00004000): restricted entry (by permit or season); not modelled as a clause
+
+# Speed limit 5 kn (2.57 m/s) - fairway Bergen.SpeedLimit.Bergen.5kn
+clause['Bergen.SpeedLimit.Bergen.5kn.Speed']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bergen.SpeedLimit.Bergen.5kn.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Velocity <= 2.57
+            }
+    }
+}
+
+# Speed limit 5 kn (2.57 m/s) - fairway Bergen.SpeedLimit.Øygarden.5kn
+clause['Bergen.SpeedLimit.Øygarden.5kn.Speed']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bergen.SpeedLimit.Øygarden.5kn.1', 'Bergen.SpeedLimit.Øygarden.5kn.2', 'Bergen.SpeedLimit.Øygarden.5kn.3']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Velocity <= 2.57
+            }
+    }
+}
+
+# Speed limit 8 kn (4.12 m/s) - fairway Bergen.SpeedLimit.Bergen.8kn
+clause['Bergen.SpeedLimit.Bergen.8kn.Speed']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Bergen.SpeedLimit.Bergen.8kn.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Velocity <= 4.12
+            }
+    }
+}

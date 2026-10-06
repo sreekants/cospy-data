@@ -1,0 +1,315 @@
+# Description:  Gdansk local rules - traffic separation scheme (COLREG Rule 10)
+# Generated:    by .claude/skills/mapgen/legata_site.py from config/map/po/gdansk/sea.s3db (MAPGEN §4.3); regenerate, do not edit
+# Zone:         (OwnShip,TrafficSeparationScheme) is the zone the vessel is in, of the types the ZoneRule module in rules.yaml watches
+
+# Rule 10(b)(i): proceed in Gdansk.TSS.Eastbound.1 in its general direction of traffic flow (Eastbound; simulator heading 0, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Gdansk.TSS.Eastbound.1.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.Eastbound.1.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(315, 45)) or (OwnShip.Heading in angle(75, 105)) or (OwnShip.Heading in angle(255, 285))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Gdansk.TSS.Eastbound.1
+clause['Gdansk.TSS.Eastbound.1.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.Eastbound.1.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(b)(i): proceed in Gdansk.TSS.Westbound.2 in its general direction of traffic flow (Westbound; simulator heading 180, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Gdansk.TSS.Westbound.2.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.Westbound.2.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(135, 225)) or (OwnShip.Heading in angle(255, 285)) or (OwnShip.Heading in angle(75, 105))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Gdansk.TSS.Westbound.2
+clause['Gdansk.TSS.Westbound.2.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.Westbound.2.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(b)(i): proceed in Gdansk.TSS.SouthwestBound.3 in its general direction of traffic flow (SouthwestBound; simulator heading 135, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Gdansk.TSS.SouthwestBound.3.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.SouthwestBound.3.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(90, 180)) or (OwnShip.Heading in angle(210, 240)) or (OwnShip.Heading in angle(30, 60))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Gdansk.TSS.SouthwestBound.3
+clause['Gdansk.TSS.SouthwestBound.3.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.SouthwestBound.3.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(b)(i): proceed in Gdansk.TSS.NortheastBound.4 in its general direction of traffic flow (NortheastBound; simulator heading 315, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Gdansk.TSS.NortheastBound.4.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.NortheastBound.4.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(270, 0)) or (OwnShip.Heading in angle(30, 60)) or (OwnShip.Heading in angle(210, 240))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Gdansk.TSS.NortheastBound.4
+clause['Gdansk.TSS.NortheastBound.4.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.NortheastBound.4.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(b)(i): proceed in Gdansk.TSS.Southbound.5 in its general direction of traffic flow (Southbound; simulator heading 90, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Gdansk.TSS.Southbound.5.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.Southbound.5.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(45, 135)) or (OwnShip.Heading in angle(165, 195)) or (OwnShip.Heading in angle(345, 15))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Gdansk.TSS.Southbound.5
+clause['Gdansk.TSS.Southbound.5.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.Southbound.5.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(b)(i): proceed in Gdansk.TSS.Northbound.6 in its general direction of traffic flow (Northbound; simulator heading 270, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Gdansk.TSS.Northbound.6.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.Northbound.6.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(225, 315)) or (OwnShip.Heading in angle(345, 15)) or (OwnShip.Heading in angle(165, 195))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Gdansk.TSS.Northbound.6
+clause['Gdansk.TSS.Northbound.6.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.Northbound.6.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(b)(i): proceed in Gdansk.TSS.NortheastBound.7 in its general direction of traffic flow (NortheastBound; simulator heading 315, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Gdansk.TSS.NortheastBound.7.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.NortheastBound.7.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(270, 0)) or (OwnShip.Heading in angle(30, 60)) or (OwnShip.Heading in angle(210, 240))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Gdansk.TSS.NortheastBound.7
+clause['Gdansk.TSS.NortheastBound.7.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.NortheastBound.7.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(b)(i): proceed in Gdansk.TSS.SouthwestBound.8 in its general direction of traffic flow (SouthwestBound; simulator heading 135, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Gdansk.TSS.SouthwestBound.8.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.SouthwestBound.8.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(90, 180)) or (OwnShip.Heading in angle(210, 240)) or (OwnShip.Heading in angle(30, 60))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Gdansk.TSS.SouthwestBound.8
+clause['Gdansk.TSS.SouthwestBound.8.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.SouthwestBound.8.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(b)(i): proceed in Gdansk.TSS.Northbound.9 in its general direction of traffic flow (Northbound; simulator heading 270, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Gdansk.TSS.Northbound.9.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.Northbound.9.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(225, 315)) or (OwnShip.Heading in angle(345, 15)) or (OwnShip.Heading in angle(165, 195))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Gdansk.TSS.Northbound.9
+clause['Gdansk.TSS.Northbound.9.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.Northbound.9.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(b)(i): proceed in Gdansk.TSS.Southbound.10 in its general direction of traffic flow (Southbound; simulator heading 90, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Gdansk.TSS.Southbound.10.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.Southbound.10.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(45, 135)) or (OwnShip.Heading in angle(165, 195)) or (OwnShip.Heading in angle(345, 15))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Gdansk.TSS.Southbound.10
+clause['Gdansk.TSS.Southbound.10.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.Southbound.10.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(b)(i): proceed in Gdansk.TSS.SoutheastBound.11 in its general direction of traffic flow (SoutheastBound; simulator heading 45, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Gdansk.TSS.SoutheastBound.11.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.SoutheastBound.11.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(0, 90)) or (OwnShip.Heading in angle(120, 150)) or (OwnShip.Heading in angle(300, 330))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Gdansk.TSS.SoutheastBound.11
+clause['Gdansk.TSS.SoutheastBound.11.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.SoutheastBound.11.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(b)(i): proceed in Gdansk.TSS.NorthwestBound.12 in its general direction of traffic flow (NorthwestBound; simulator heading 225, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Gdansk.TSS.NorthwestBound.12.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.NorthwestBound.12.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(180, 270)) or (OwnShip.Heading in angle(300, 330)) or (OwnShip.Heading in angle(120, 150))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Gdansk.TSS.NorthwestBound.12
+clause['Gdansk.TSS.NorthwestBound.12.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.NorthwestBound.12.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(e): do not enter Gdansk.TSS.SeparationZone.1 except to cross, join or leave a lane, in an emergency, or to fish in it
+clause['Gdansk.TSS.SeparationZone.1.Entry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.SeparationZone.1.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation not in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# Rule 10(e): do not enter Gdansk.TSS.SeparationZone.2 except to cross, join or leave a lane, in an emergency, or to fish in it
+clause['Gdansk.TSS.SeparationZone.2.Entry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Gdansk.TSS.SeparationZone.2.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation not in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}

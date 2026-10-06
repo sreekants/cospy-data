@@ -1,0 +1,99 @@
+# Description:  Barcelona local rules - traffic separation scheme (COLREG Rule 10)
+# Generated:    by .claude/skills/mapgen/legata_site.py from config/map/es/barcelona/sea.s3db (MAPGEN §4.3); regenerate, do not edit
+# Zone:         (OwnShip,TrafficSeparationScheme) is the zone the vessel is in, of the types the ZoneRule module in rules.yaml watches
+
+# Rule 10(b)(i): proceed in Barcelona.TSS.NorthwestBound.1 in its general direction of traffic flow (NorthwestBound; simulator heading 225, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Barcelona.TSS.NorthwestBound.1.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Barcelona.TSS.NorthwestBound.1.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(180, 270)) or (OwnShip.Heading in angle(300, 330)) or (OwnShip.Heading in angle(120, 150))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Barcelona.TSS.NorthwestBound.1
+clause['Barcelona.TSS.NorthwestBound.1.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Barcelona.TSS.NorthwestBound.1.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(b)(i): proceed in Barcelona.TSS.SoutheastBound.2 in its general direction of traffic flow (SoutheastBound; simulator heading 45, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Barcelona.TSS.SoutheastBound.2.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Barcelona.TSS.SoutheastBound.2.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(0, 90)) or (OwnShip.Heading in angle(120, 150)) or (OwnShip.Heading in angle(300, 330))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Barcelona.TSS.SoutheastBound.2
+clause['Barcelona.TSS.SoutheastBound.2.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Barcelona.TSS.SoutheastBound.2.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(b)(i): proceed in Barcelona.TSS.Northbound.3 in its general direction of traffic flow (Northbound; simulator heading 270, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Barcelona.TSS.Northbound.3.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Barcelona.TSS.Northbound.3.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(225, 315)) or (OwnShip.Heading in angle(345, 15)) or (OwnShip.Heading in angle(165, 195))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Barcelona.TSS.Northbound.3
+clause['Barcelona.TSS.Northbound.3.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Barcelona.TSS.Northbound.3.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(b)(i): proceed in Barcelona.TSS.Southbound.4 in its general direction of traffic flow (Southbound; simulator heading 90, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Barcelona.TSS.Southbound.4.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Barcelona.TSS.Southbound.4.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(45, 135)) or (OwnShip.Heading in angle(165, 195)) or (OwnShip.Heading in angle(345, 15))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Barcelona.TSS.Southbound.4
+clause['Barcelona.TSS.Southbound.4.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Barcelona.TSS.Southbound.4.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}

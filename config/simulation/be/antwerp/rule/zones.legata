@@ -1,0 +1,19 @@
+# Description:  Antwerp local rules - restricted and regulated zones
+# Generated:    by .claude/skills/mapgen/legata_site.py from config/map/be/antwerp/sea.s3db (MAPGEN §4.3); regenerate, do not edit
+# Zone:         (OwnShip,TrafficSeparationScheme) is the zone the vessel is in, of the types the ZoneRule module in rules.yaml watches
+
+# No fishing - harbour Antwerp.Harbour
+clause['Antwerp.Harbour.NoFishing']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Antwerp.Harbour.1', 'Antwerp.Harbour.2', 'Antwerp.Harbour.3', 'Antwerp.Harbour.4', 'Antwerp.Harbour.5', 'Antwerp.Harbour.6', 'Antwerp.Harbour.7', 'Antwerp.Harbour.8', 'Antwerp.Harbour.9', 'Antwerp.Harbour.10', 'Antwerp.Harbour.11']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# speed-restricted reach Antwerp.SpeedZone.1 (osm:way/885940184): speed restricted, limit not published in the source; the zone type default in config/examiner/zones.yaml applies
+
+# speed-restricted reach Antwerp.SpeedZone.1 (osm:way/885940184): restricted entry (by permit or season); not modelled as a clause

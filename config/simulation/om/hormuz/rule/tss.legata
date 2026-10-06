@@ -1,0 +1,63 @@
+# Description:  Hormuz local rules - traffic separation scheme (COLREG Rule 10)
+# Generated:    by .claude/skills/mapgen/legata_site.py from config/map/om/hormuz/sea.s3db (MAPGEN §4.3); regenerate, do not edit
+# Zone:         (OwnShip,TrafficSeparationScheme) is the zone the vessel is in, of the types the ZoneRule module in rules.yaml watches
+
+# Rule 10(b)(i): proceed in Hormuz.TSS.Westbound.1 in its general direction of traffic flow (Westbound; simulator heading 180, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Hormuz.TSS.Westbound.1.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Hormuz.TSS.Westbound.1.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(135, 225)) or (OwnShip.Heading in angle(255, 285)) or (OwnShip.Heading in angle(75, 105))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Hormuz.TSS.Westbound.1
+clause['Hormuz.TSS.Westbound.1.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Hormuz.TSS.Westbound.1.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(b)(i): proceed in Hormuz.TSS.Eastbound.2 in its general direction of traffic flow (Eastbound; simulator heading 0, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Hormuz.TSS.Eastbound.2.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Hormuz.TSS.Eastbound.2.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(315, 45)) or (OwnShip.Heading in angle(75, 105)) or (OwnShip.Heading in angle(255, 285))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Hormuz.TSS.Eastbound.2
+clause['Hormuz.TSS.Eastbound.2.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Hormuz.TSS.Eastbound.2.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Rule 10(e): do not enter Hormuz.TSS.SeparationZone.1 except to cross, join or leave a lane, in an emergency, or to fish in it
+clause['Hormuz.TSS.SeparationZone.1.Entry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Hormuz.TSS.SeparationZone.1.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation not in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}

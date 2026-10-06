@@ -1,0 +1,75 @@
+# Description:  Barcelona local rules - restricted and regulated zones
+# Generated:    by .claude/skills/mapgen/legata_site.py from config/map/es/barcelona/sea.s3db (MAPGEN §4.3); regenerate, do not edit
+# Zone:         (OwnShip,TrafficSeparationScheme) is the zone the vessel is in, of the types the ZoneRule module in rules.yaml watches
+
+# Speed limit 6 kn (3.09 m/s) - harbour Barcelona.Harbour
+clause['Barcelona.Harbour.Speed']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Barcelona.Harbour.1', 'Barcelona.Harbour.2', 'Barcelona.Harbour.3', 'Barcelona.Harbour.4', 'Barcelona.Harbour.5', 'Barcelona.Harbour.6', 'Barcelona.Harbour.7']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Velocity <= 3.09
+            }
+    }
+}
+
+# No fishing - harbour Barcelona.Harbour
+clause['Barcelona.Harbour.NoFishing']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Barcelona.Harbour.1', 'Barcelona.Harbour.2', 'Barcelona.Harbour.3', 'Barcelona.Harbour.4', 'Barcelona.Harbour.5', 'Barcelona.Harbour.6', 'Barcelona.Harbour.7']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No fishing - anchorage Barcelona.Anchorage.East (BOE-A-2023-6719)
+clause['Barcelona.Anchorage.East.NoFishing']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Barcelona.Anchorage.East.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No fishing - anchorage Barcelona.Anchorage.South (BOE-A-2023-6719)
+clause['Barcelona.Anchorage.South.NoFishing']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Barcelona.Anchorage.South.1', 'Barcelona.Anchorage.South.2']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No fishing - restricted or precautionary area Barcelona.PrecautionaryArea.North (BOE-A-2023-6719)
+clause['Barcelona.PrecautionaryArea.North.NoFishing']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Barcelona.PrecautionaryArea.North.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No fishing - restricted or precautionary area Barcelona.PrecautionaryArea.South (BOE-A-2023-6719)
+clause['Barcelona.PrecautionaryArea.South.NoFishing']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Barcelona.PrecautionaryArea.South.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Operation in [Vessel.Operation.FISHING])
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
