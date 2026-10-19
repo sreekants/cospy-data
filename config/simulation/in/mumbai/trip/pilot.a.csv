@@ -1,0 +1,4 @@
+id,t,x,y,z,sog,cog,action,comment
+1,0,95,960,0,0.15,0,,Pilot station
+2,0,220,860,0,0.5,0,,Approach channel
+3,0,345,735,0,0.5,0,anchor(300),Off DW2

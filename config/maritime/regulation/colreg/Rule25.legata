@@ -15,7 +15,7 @@ condition: {
 # (a) A sailing vessel underway shall exhibit:
 # (i) sidelights;
 # (ii) a sternlight.
-clause['COLREG.Rule24.a']:{
+clause['COLREG.Rule25.a']:{
     :{
         condition: { 
 			:OS.Type is Vessel.Type.PowerDriven

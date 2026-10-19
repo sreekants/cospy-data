@@ -10,7 +10,7 @@
 # Type names must match cos.model.geography.Sea.Type members exactly.
 #
 # nominal_depth (REQ.022): the seabed depth assumed where no map shape reports one. The base is
-# location.depth.nominal in $(SIMULATION)/location.yaml (4000 m, open sea). A shape's settings,
+# location.sea.depth.nominal in $(SIMULATION)/location.yaml (4000 m, open sea). A shape's settings,
 # a named zone or a Sea.Type may lower it, e.g. for an inland waterway with no bathymetry:
 #     types:
 #       WATERWAY:

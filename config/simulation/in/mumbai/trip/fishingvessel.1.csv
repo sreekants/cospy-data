@@ -1,0 +1,4 @@
+id,t,x,y,z,sog,cog,action,comment
+1,0,150,700,0,0.2,0,,Off Sassoon Dock
+2,0,170,800,0,0.2,0,,
+3,0,60,880,0,0.075,0,fishing(6|25|0.075),Fishing ground off Prongs

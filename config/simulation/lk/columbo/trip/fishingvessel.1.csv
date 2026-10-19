@@ -1,0 +1,5 @@
+id,t,x,y,z,sog,cog,action,comment
+1,0,840,230,0,0.2,0,,Mutwal
+2,0,760,175,0,0.2,0,,
+3,0,520,70,0,0.2,0,,
+4,0,250,260,0,0.075,0,fishing(6|30|0.075),Fishing ground north-west

@@ -1,0 +1,4 @@
+id,t,x,y,z,sog,cog,action,comment
+1,0,230,405,0,0.2,0,,Bhaucha Dhakka
+2,0,300,360,0,0.2,0,,
+3,0,360,320,0,0.075,0,fishing(6|25|0.075),Fishing ground north

@@ -1,0 +1,75 @@
+# Description:  Kandilli local rules - traffic separation scheme (COLREG Rule 10)
+# Generated:    by .claude/skills/mapgen/legata_site.py from config/map/tk/kandilli/sea.s3db (MAPGEN §4.3); regenerate, do not edit
+# Zone:         (OwnShip,TrafficSeparationScheme) is the zone the vessel is in, of the types the ZoneRule module in rules.yaml watches
+
+# Rule 10(b)(i): proceed in Kandilli.TSS.Northbound.1 in its general direction of traffic flow (Northbound; simulator heading 270, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Kandilli.TSS.Northbound.1.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Kandilli.TSS.Northbound.1.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(225, 315)) or (OwnShip.Heading in angle(345, 15)) or (OwnShip.Heading in angle(165, 195))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Kandilli.TSS.Northbound.1
+clause['Kandilli.TSS.Northbound.1.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Kandilli.TSS.Northbound.1.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Speed limit 10 kn (5.14 m/s) in Kandilli.TSS.Northbound.1
+clause['Kandilli.TSS.Northbound.1.Speed']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Kandilli.TSS.Northbound.1.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Velocity <= 5.14
+            }
+    }
+}
+
+# Rule 10(b)(i): proceed in Kandilli.TSS.Southbound.2 in its general direction of traffic flow (Southbound; simulator heading 90, 0 = east, y south) within 45 degrees; Rule 10(c): or cross it at right angles (within 15 degrees)
+clause['Kandilli.TSS.Southbound.2.Direction']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Kandilli.TSS.Southbound.2.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true) and (OwnShip.Velocity > 0.5)
+            }
+        assure: {
+            :(OwnShip.Heading in angle(45, 135)) or (OwnShip.Heading in angle(165, 195)) or (OwnShip.Heading in angle(345, 15))
+            }
+    }
+}
+
+# Rule 10(g): avoid anchoring in Kandilli.TSS.Southbound.2
+clause['Kandilli.TSS.Southbound.2.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Kandilli.TSS.Southbound.2.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# Speed limit 10 kn (5.14 m/s) in Kandilli.TSS.Southbound.2
+clause['Kandilli.TSS.Southbound.2.Speed']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Kandilli.TSS.Southbound.2.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Velocity <= 5.14
+            }
+    }
+}

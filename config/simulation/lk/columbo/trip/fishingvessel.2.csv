@@ -1,0 +1,4 @@
+id,t,x,y,z,sog,cog,action,comment
+1,0,880,760,0,0.2,0,,Wellawatte
+2,0,700,790,0,0.2,0,,
+3,0,450,820,0,0.075,0,fishing(6|30|0.075),Fishing ground south

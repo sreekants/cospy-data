@@ -1,0 +1,53 @@
+# Description:  Columbo local rules - restricted and regulated zones
+# Generated:    by .claude/skills/mapgen/legata_site.py from config/map/lk/columbo/sea.s3db (MAPGEN §4.3); regenerate, do not edit
+# Zone:         (OwnShip,TrafficSeparationScheme) is the zone the vessel is in, of the types the ZoneRule module in rules.yaml watches
+
+# restricted or precautionary area Columbo.PrecautionaryArea.PortApproachLimit (NGA-Pub173-4.18): restricted entry (by permit or season); not modelled as a clause
+
+# No anchoring - restricted or precautionary area Columbo.PrecautionaryArea.SubmarineCables (NGA-Pub173-4.18)
+clause['Columbo.PrecautionaryArea.SubmarineCables.NoAnchoring']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Columbo.PrecautionaryArea.SubmarineCables.1', 'Columbo.PrecautionaryArea.SubmarineCables.2']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :OwnShip.Status not in [Vessel.Status.ANCHORED]
+            }
+    }
+}
+
+# No entry - area to avoid Columbo.AreaToAvoid.ColomboMarineTerminal (NGA-Pub173-4.18)
+clause['Columbo.AreaToAvoid.ColomboMarineTerminal.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Columbo.AreaToAvoid.ColomboMarineTerminal.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - area to avoid Columbo.AreaToAvoid.KerawalapitiyaLng (NGA-Pub173-4.18)
+clause['Columbo.AreaToAvoid.KerawalapitiyaLng.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Columbo.AreaToAvoid.KerawalapitiyaLng.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}
+
+# No entry - area to avoid Columbo.AreaToAvoid.KerawalapitiyaSbm (NGA-Pub173-4.18)
+clause['Columbo.AreaToAvoid.KerawalapitiyaSbm.NoEntry']:{
+    : {
+        condition: {
+            :((OwnShip,TrafficSeparationScheme).Name in ['Columbo.AreaToAvoid.KerawalapitiyaSbm.1']) and ((OwnShip,TrafficSeparationScheme).InRange == true)
+            }
+        assure: {
+            :(OwnShip,TrafficSeparationScheme).InRange == false
+            }
+    }
+}

@@ -1,0 +1,4 @@
+# Vessels under test for the Gdansk coverage run (REQ.024). Local test only.
+under_test:
+  - imo: 2389929   # True North: lane follower, COLREG reference (trip/container.coverage.csv)
+  - imo: 3240845   # BERGE ODEL: scripted local-rule and zone violator (trip/coverage.violator.csv)

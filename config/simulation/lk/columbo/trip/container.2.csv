@@ -1,0 +1,13 @@
+id,t,x,y,z,sog,cog,action,comment
+1,0,380,20,0,0.35,0,,From the north-west
+2,0,560,90,0,0.2,0,,
+3,0,606,128,0,0.15,0,anchor(300),Pilot Boarding Ground B
+4,0,720,230,0,0.2,0,,
+5,0,800,300,0,0.15,0,,Port approach
+6,0,912,370,0,0.1,0,,Inner Harbour entrance
+7,0,920,440,0,0.1,0,anchor(1800),Inner Harbour berth
+8,0,922,375,0,0.1,0,,Inner Harbour entrance
+9,0,810,290,0,0.15,0,,Port approach
+10,0,730,220,0,0.2,0,,
+11,0,640,130,0,0.3,0,,
+12,0,400,20,0,0.35,0,,To the north-west

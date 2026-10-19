@@ -1,0 +1,18 @@
+id,t,x,y,z,sog,cog,action,comment
+1,0,960,30,0,1.5,0,,start in the contiguous zone
+2,0,880,150,0,1.5,0,,territorial sea
+3,0,776,150,0,1.5,0,,crosses Northbound.6 at 90 deg (compliant); enters SeparationZone.1 (10(e))
+4,0,745,150,0,1.0,0,,crosses into Southbound.5
+5,0,740,130,0,1.0,0,anchor(60),wrong way in Southbound.5 (10(b)(i)); anchors in the lane (10(g))
+6,0,736,80,0,1.5,0,,leaves the lane north
+7,0,600,65,0,1.5,0,,north of the lanes
+8,0,450,70,0,1.5,0,,in MilitaryArea.Strefa11 (no entry)
+9,0,460,200,0,1.5,0,,south between Strefa14 and SouthwestBound.8
+10,0,415,320,0,1.5,0,,
+11,0,410,440,0,1.5,0,,
+12,0,420,520,0,1.5,0,,
+13,0,360,575,0,1.5,0,,anchors in Anchorage.1 (compliant)
+14,0,278,556,0,1.0,0,anchor(120),
+15,0,330,620,0,1.5,0,,through AreaToAvoid.3 (no entry; cargo)
+16,0,300,700,0,1.0,0,,slow approach
+17,0,360,740,0,0.5,0,,berths in Harbour.20 (cargo)

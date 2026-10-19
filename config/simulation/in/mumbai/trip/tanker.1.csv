@@ -1,0 +1,16 @@
+id,t,x,y,z,sog,cog,action,comment
+1,0,100,955,0,0.15,0,anchor(300),Pilot station
+2,0,210,870,0,0.3,0,,Approach channel
+3,0,355,790,0,0.3,0,,East of DW1-DW3
+4,0,385,690,0,0.25,0,,
+5,0,395,625,0,0.25,0,,East of Middle Ground
+6,0,440,540,0,0.2,0,,Harbour
+7,0,475,470,0,0.1,0,,Jawahar Dweep approach
+8,0,483,430,0,0.1,0,anchor(1800),Jawahar Dweep oil berth
+9,0,490,475,0,0.1,0,,Jawahar Dweep approach
+10,0,455,555,0,0.2,0,,Harbour
+11,0,405,630,0,0.25,0,,East of Middle Ground
+12,0,400,700,0,0.3,0,,
+13,0,370,800,0,0.3,0,,East of DW1-DW3
+14,0,225,885,0,0.3,0,,Approach channel
+15,0,115,970,0,0.3,0,,Pilot station

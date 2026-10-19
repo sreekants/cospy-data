@@ -1,0 +1,6 @@
+id,t,x,y,z,sog,cog,action,comment
+1,0,90,965,0,0.15,0,,Pilot station
+2,0,205,880,0,0.5,0,,Approach channel
+3,0,365,785,0,0.5,0,,
+4,0,395,640,0,0.5,0,,
+5,0,550,540,0,0.5,0,anchor(300),JNPT approach

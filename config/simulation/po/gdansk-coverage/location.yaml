@@ -1,0 +1,30 @@
+# Settings of this location, loaded once at simulation startup. Settings are grouped by the
+# medium they describe: sea now; land and sky are reserved for multi-modal simulations. Map
+# databases never hold settings for zones: those settings live here.
+#
+# sea.depth.nominal
+#   Seabed depth, in metres, assumed wherever no sea shape of the map reports a
+#   depth (REQ.022). Every depth accessor returns this rather than nothing, so a
+#   stretch of unmapped water reads as open sea. 4000 m is about the mean depth
+#   of the ocean: under-keel clearance against it is never marginal, so the
+#   fallback can never cause a grounding finding. Lower it where unmapped water
+#   is known to be shallow, e.g. an inland waterway. The run log reports how many
+#   depth queries fell back to it.
+#
+# sea.tss (optional; written by mapgen zones.write_lanes, MAPGEN §4.2)
+#   Traffic separation schemes in this location's map.
+#   safe_distance        Metres a vessel keeps from other vessels in a lane (TSS.SafeDistance).
+#                        100 is the value the maps carried before it moved here; unsourced.
+#   separation_distance  Metres a vessel keeps clear of a separation line or zone
+#                        (COLREG Rule 10(b)(ii), TSS.SeparationDistance). Unset, the term
+#                        is 0 and the clause holds trivially. Give its source beside it.
+#   lanes                Per lane, by shape name or a dotted prefix of it (the longest wins):
+#                        safe_heading, the simulator heading of the lane's traffic flow
+#                        (0 = east, y south; TSS.SafeHeading), and either distance.
+
+location:
+  country: "po"
+  location: "gdansk"
+  sea:
+    depth:
+      nominal: 4000.0
