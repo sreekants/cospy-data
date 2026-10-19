@@ -1,9 +1,9 @@
 id,t,x,y,z,sog,cog,action,comment
-1,0,691.4,718.8,0,1.5,0,,
-2,0,992.8,668.2,0,1.5,0,,
-3,0,407.8,765.1,0,0.8,0,anchor(2),
-4,0,938.9,695.4,0,1.5,0,,
-5,0,250.6,775.2,0,1.5,0,,
-6,0,620.4,524.9,0,1.5,0,anchor(1.5),"soak plan fix: moved from 556 462.1, a waypoint another vessel shares"
-7,0,693,20,0,1.5,0,anchor(1.5),
-8,0,621.7,532.1,0,1.5,0,,"soak plan fix: moved from 509.9 488.4, a waypoint another vessel shares"
+1,0,653.6,507,0,0.245902,0,,
+2,0,635.9,270.7,0,0.245902,0,,
+3,0,450.3,573.5,0,0.131148,0,anchor(2),
+4,0,632.7,386.4,0,0.245902,0,,
+5,0,250.6,775.2,0,0.245902,0,,
+6,0,620.4,524.9,0,0.245902,0,anchor(1.5),"soak plan fix: moved from 556 462.1, a waypoint another vessel shares"
+7,0,693,20,0,0.245902,0,anchor(1.5),
+8,0,621.7,532.1,0,0.245902,0,,"soak plan fix: moved from 509.9 488.4, a waypoint another vessel shares"

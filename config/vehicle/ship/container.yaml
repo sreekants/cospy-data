@@ -18,7 +18,7 @@ physics:
     linear_damping_coeff: 500000000
     length: 294             # metres, length overall
     width: 3
-    draft: 100
+    draft: 12.8        # metres; source: PIANC WG235 (2022) Container Ships (Panamax & smaller), fully laden, interpolated 50,000-55,000 dwt
     momentum: 0.92
     relative_size: "large"
 
@@ -49,6 +49,7 @@ behavior:
     stop_on_traffic     : true
 
 cargo:
+    manifest        : [containers]   # Cargo classes carried, matched against zones.yaml restricted_cargo; 'none' declares an empty hold
     # Cargo properties
     # Vessel type
         # - Container ships (standardized boxes), 

@@ -19,7 +19,7 @@ physics:
     linear_damping_coeff: 500000000
     length: 32             # metres, length overall
     width: 3
-    draft: 10
+    draft: 5.5         # metres; source: Damen ASD Tug 3212 (32.7 m), ship-technology.com
     momentum: 0.42
     relative_size: "small"
 
@@ -49,6 +49,7 @@ behavior:
     stop_on_traffic     : false
 
 cargo:
+    manifest        : [none]   # Cargo classes carried, matched against zones.yaml restricted_cargo; 'none' declares an empty hold
     humans_present  : 6
 
 devices:

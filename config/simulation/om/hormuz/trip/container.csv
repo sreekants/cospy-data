@@ -1,16 +1,57 @@
 id,t,x,y,z,sog,cog,action,comment
-1,0,435,7,0,0.96,0,,
-2,0,519.1,472.1,0,0.96,0,,
-3,0,589.8,474.3,0,1.5,0,,rerouted by soak: via water
-4,0,595.4,475.7,0,1.5,0,,rerouted by soak: via water
-5,0,603,483,0,1.5,0,,rerouted by soak: via water
-6,0,627,563,0,1.5,0,,rerouted by soak: via water
-7,0,582.8,736.6,0,1.5,0,,rerouted by soak: via water
-8,0,456.7,724.2,0,1.5,0,,rerouted by soak: via water
-9,0,431,753,0,1.5,0,,rerouted by soak: via water
-10,0,431,757,0,1.5,0,,rerouted by soak: via water
-11,0,429,761,0,1.7,0,,rerouted by soak: moved from 400 770
-12,0,443,731,0,1.7,0,,rerouted by soak: via water
-13,0,467,726,0,1.7,0,,rerouted by soak: via water
-14,0,575,747,0,1.7,0,,rerouted by soak: via water
-15,0,925,5,0,1.5,0,,
+1,0,765.0,305.0,0,1.5,0,,TSS Westbound.1 (start/end)
+2,0,739.0,279.0,0,1.5,0,,TSS Westbound.1
+3,0,737.0,273.0,0,1.5,0,,TSS Westbound.1
+4,0,733.0,269.0,0,1.5,0,,TSS Westbound.1
+5,0,731.0,263.0,0,1.5,0,,TSS Westbound.1
+6,0,727.0,259.0,0,1.5,0,,TSS Westbound.1
+7,0,725.0,253.0,0,1.5,0,,TSS Westbound.1
+8,0,721.0,249.0,0,1.5,0,,TSS Westbound.1
+9,0,719.0,243.0,0,1.5,0,,TSS Westbound.1
+10,0,715.0,239.0,0,1.5,0,,TSS Westbound.1
+11,0,713.0,233.0,0,1.5,0,,TSS Westbound.1
+12,0,709.0,229.0,0,1.5,0,,TSS Westbound.1
+13,0,707.0,223.0,0,1.5,0,,TSS Westbound.1
+14,0,703.0,219.0,0,1.5,0,,TSS Westbound.1
+15,0,699.0,211.0,0,1.5,0,,TSS Westbound.1
+16,0,671.0,183.0,0,1.5,0,,TSS Westbound.1
+17,0,553.0,183.0,0,1.5,0,,TSS Westbound.1
+18,0,545.0,187.0,0,1.5,0,,TSS Westbound.1
+19,0,539.0,187.0,0,1.5,0,,TSS Westbound.1
+20,0,537.0,189.0,0,1.5,0,,TSS Westbound.1
+21,0,531.0,189.0,0,1.5,0,,TSS Westbound.1
+22,0,523.0,193.0,0,1.5,0,,TSS Westbound.1
+23,0,509.0,195.0,0,1.5,0,,TSS Westbound.1
+24,0,501.0,199.0,0,1.5,0,,TSS Westbound.1
+25,0,495.0,199.0,0,1.5,0,,TSS Westbound.1
+26,0,493.0,201.0,0,1.5,0,,TSS Westbound.1
+27,0,479.0,203.0,0,1.5,0,,TSS Westbound.1
+28,0,471.0,207.0,0,1.5,0,,TSS Westbound.1
+29,0,445.0,207.0,0,1.5,0,,TSS Westbound.1
+30,0,439.0,207.0,0,1.5,0,,
+31,0,435.0,211.0,0,1.5,0,,
+32,0,437.0,259.0,0,1.5,0,,
+33,0,467.0,289.0,0,1.5,0,,
+34,0,473.0,289.0,0,1.5,0,,
+35,0,497.0,289.0,0,1.5,0,,TSS Eastbound.2
+36,0,511.0,281.0,0,1.5,0,,TSS Eastbound.2
+37,0,515.0,281.0,0,1.5,0,,TSS Eastbound.2
+38,0,525.0,275.0,0,1.5,0,,TSS Eastbound.2
+39,0,529.0,275.0,0,1.5,0,,TSS Eastbound.2
+40,0,543.0,267.0,0,1.5,0,,TSS Eastbound.2
+41,0,547.0,267.0,0,1.5,0,,TSS Eastbound.2
+42,0,553.0,263.0,0,1.5,0,,TSS Eastbound.2
+43,0,557.0,263.0,0,1.5,0,,TSS Eastbound.2
+44,0,567.0,257.0,0,1.5,0,,TSS Eastbound.2
+45,0,629.0,257.0,0,1.5,0,,TSS Eastbound.2
+46,0,661.0,289.0,0,1.5,0,,TSS Eastbound.2
+47,0,663.0,295.0,0,1.5,0,,TSS Eastbound.2
+48,0,667.0,299.0,0,1.5,0,,TSS Eastbound.2
+49,0,675.0,315.0,0,1.5,0,,TSS Eastbound.2
+50,0,705.0,345.0,0,1.5,0,,TSS Eastbound.2
+51,0,707.0,345.0,0,1.5,0,,TSS Eastbound.2
+52,0,711.0,351.0,0,1.5,0,,
+53,0,731.0,351.0,0,1.5,0,,
+54,0,769.0,315.0,0,1.5,0,,
+55,0,767.0,307.0,0,1.5,0,,
+56,0,765.0,305.0,0,1.5,0,,TSS Westbound.1 (start/end)

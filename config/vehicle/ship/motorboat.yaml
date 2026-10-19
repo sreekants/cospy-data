@@ -19,7 +19,7 @@ physics:
     linear_damping_coeff: 500000000
     length: 10             # metres, length overall
     width: 3
-    draft: 10
+    draft: 1.1         # metres; source: Botnia Targa 32 (10.8 m, 6.4 t), broker listings
     momentum: 0.42
     relative_size: "small"
 
@@ -49,6 +49,7 @@ behavior:
     stop_on_traffic     : false
 
 cargo:
+    manifest        : [none]   # Cargo classes carried, matched against zones.yaml restricted_cargo; 'none' declares an empty hold
     humans_present  : 2
 
 devices:

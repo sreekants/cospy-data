@@ -19,7 +19,7 @@ physics:
     linear_damping_coeff: 500000000
     length: 25             # metres, length overall
     width: 3
-    draft: 10
+    draft: 3.7         # metres; source: PIANC WG235 (2022) Fishing Vessels > 200 GT, fully laden, smallest row (200 dwt, LOA 38 m)
     momentum: 0.10
     relative_size: "tiny"
 
@@ -53,6 +53,7 @@ fishing:
     fishing_aft_dist : 1000.0  # metres; min distance from aft of any vessel while fishing
 
 cargo:
+    manifest        : [fish]   # Cargo classes carried, matched against zones.yaml restricted_cargo; 'none' declares an empty hold
     humans_present  : 3
 
 devices:

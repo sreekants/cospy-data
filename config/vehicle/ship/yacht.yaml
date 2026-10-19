@@ -19,7 +19,7 @@ physics:
     length: 30             # metres, length overall
     width: 3
     momentum: 0.92
-    draft: 40
+    draft: 2.1         # metres; source: Sunseeker 30M (29.8 m), sunseeker.com
     momentum: 0.75
     relative_size: "medium"
 
@@ -50,6 +50,7 @@ behavior:
     stop_on_traffic     : false
 
 cargo:
+    manifest        : [none]   # Cargo classes carried, matched against zones.yaml restricted_cargo; 'none' declares an empty hold
     humans_present  : 5
    
 devices:

@@ -19,7 +19,7 @@ physics:
     linear_damping_coeff: 500000000
     length: 75             # metres, length overall
     width: 3
-    draft: 40
+    draft: 2.4         # metres; source: PIANC WG235 (2022) Ferries, fully laden, interpolated 200-400 dwt
     momentum: 0.75
     relative_size: "medium"
 
@@ -51,6 +51,7 @@ behavior:
     stop_on_traffic     : true
 
 cargo:
+    manifest        : [passengers, vehicles]   # Cargo classes carried, matched against zones.yaml restricted_cargo; 'none' declares an empty hold
     humans_present  : 100
     
 devices:

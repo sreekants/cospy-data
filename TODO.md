@@ -65,8 +65,11 @@ Measured 2026-09-26 against this tree (`90d211a` plus working changes) and the `
 - [ ] **`se/stockholm` has a map but no simulation** (untracked). Add
       `config/simulation/se/stockholm/` (`cos.ini`, `rules.yaml`, `risk.yaml`, `vessel.s3db`,
       `trip/`) and its nine weather databases, or record that it is map-only.
-- [ ] **`dk/copenhagen` and `tk/canakkale` `risk.yaml` lack a `weights:` block** (untracked).
+- [x] **`dk/copenhagen` and `tk/canakkale` `risk.yaml` lack a `weights:` block** (untracked).
       `ConcernWeights` needs one per territory; `test_ConcernWeights` fails on both.
+      Done: all 24 sites now carry one (equal weights, 1.0 per concern); `test_ConcernWeights`
+      passes (checked 2026-10-06). Under REQ.041 DOC-041-02, `Rw` now comes from the score file,
+      so these blocks are themselves due for review.
 
 ## 5. Examiner configuration
 

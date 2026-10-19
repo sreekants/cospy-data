@@ -17,6 +17,18 @@ poetry run ../cospy-data/sim.sh trondheim
 
 Any folder under `config/simulation/<country>/` is a valid location.
 
+To run a location with a different traffic model or weather than its
+`cos.ini` sets, add `traffic=` and/or `weather=` (both optional, in any order):
+
+```bash
+poetry run ../cospy-data/sim.sh trondheim traffic=ldta weather=clearsky
+```
+
+`sim.sh` prints a warning naming the overrides and passes them to
+`coslaunch.py` as `-environment "TRAFFIC=ldta:WEATHER=clearsky"`, which
+replaces `TRAFFIC` and `WEATHER` from `cos.ini` (and so the `SCENARIO` built
+from them). See `cospy/docs/tools/coslaunch.md`.
+
 Full documentation: [docs/overview.md](docs/overview.md).
 
 ## Gallery

@@ -54,13 +54,18 @@
 
 profiles:
   clearsky:                     # proposed
-    wind:          [1, 5]       # Beaufort 1-3
+    fields:        false        # no weather patterns: no wind, wave or current samples (2026-10-13)
+    wind:          [1, 5]       # Beaufort 1-3; with fields: false, not written (kept so draws stay stable)
     waves:         [0.1, 0.5]
     current:       [0.05, 0.3]
     visibility:    [10, 20]
     precipitation: [0, 0]
     humidity:      [50, 75]
     band:          calm
+
+# fields: false leaves a profile's wind_currents, sea_waves and sea_currents
+# tables empty, so the type puts no force on any vessel and cviz shows no
+# vectors. Its weather regions are generated as usual. Omitted: true.
 
   cloudy:                       # proposed
     wind:          [2, 7]       # Beaufort 2-4
@@ -138,6 +143,14 @@ profiles:
     precipitation: [50, 100]
     humidity:      [95, 100]    # proposed
     band:          severe
+    veer:          [180, 180]   # exaggerated for evaluation in cviz; realistic range is [20, 30] deg/h.
+                                # Only sg/singapore regenerated with it (2026-10-13)
+
+# veer: degrees per hour the wind field turns clockwise (veers), as when a storm
+# passes. Waves turn at half the wind's rate, since swell lags the wind; currents
+# do not turn. The generator draws one rate per field and writes it in rad/s to
+# Vr[0] of every sample. Omitted: the field does not turn (Vr all zeros).
+# A file only picks up a veer when it is regenerated.
 
 # Climate zones (proposed). A site's zone sets the temperature of its weather
 # regions, one value per weather set. null means the condition is not viable
@@ -172,7 +185,7 @@ climates:
       hurricane: [10, 20]       # rare Mediterranean-type storms
 
   tropical:                     # Tropical and Gulf
-    sites: [om/hormuz, sg/singapore]
+    sites: [om/hormuz, sg/singapore, lk/columbo, in/mumbai]
     temperature:
       clearsky: [24, 40]
       cloudy:   [25, 34]

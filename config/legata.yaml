@@ -55,10 +55,14 @@ language:
        module: maritime.model.resolver.TargetShipResolver
        config: 
 
+     # COLREG terms (COS.022). stopping.lengths: ship lengths of track reach in a full-astern stop
+     # from service speed, the IMO upper bound (MSC.137(76) Standards for ship manoeuvrability, 5.3.1);
+     # Rule 19(b) takes the stopping distance to grow with the square of speed up to it, and a safe
+     # speed as one that stops the ship within half the visibility.
      - scope: 'colreg'
        prefix: null
        module: maritime.model.resolver.ColregResolver
-       config: 
+       config: stopping.lengths=15
 
      - scope: 'fleet'
        prefix: null
