@@ -30,7 +30,8 @@ activity:
 
 maneuverability:
     max_yaw_rate        : 10.0   # degrees per timestep
-    max_speed           : 100    # speed per timestep
+    service_speed       : 12.86  # m/s (25 kn); source: Sunseeker 30 Metre #1 charter listing: cruising 25 kn
+    max_speed           : 14.40  # m/s (28 kn); source: Sunseeker 30 Metre, largest engines (YachtBuyer): maximum 28 kn
 
 behavior:
     tss_min_dist     : 800.0  # metres; normal separation inside tss

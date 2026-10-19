@@ -29,7 +29,8 @@ activity:
 
 maneuverability:
     max_yaw_rate        : 10.0   # degrees per timestep
-    max_speed           : 100    # speed per timestep
+    service_speed       : 17.49  # m/s (34 kn); source: Austal 40 m passenger catamaran datasheet: 34 kn at 40 t dwt, 100% MCR
+    max_speed           : 17.49  # m/s (34 kn); source: Austal 40 m passenger catamaran datasheet: 34 kn at 100% MCR
 
 
 behavior:

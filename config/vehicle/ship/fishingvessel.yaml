@@ -29,7 +29,8 @@ activity:
 
 maneuverability:
     max_yaw_rate        : 10.0   # degrees per timestep
-    max_speed           : 100    # speed per timestep
+    service_speed       : 5.14   # m/s (10 kn); source: Preliminary proposals for a 25-27 m stern trawler (TRID 423335): free-running speed about 10 kn
+    steerage_speed      : 2.06   # m/s (4 kn); source: MAN Diesel & Turbo, Basic Principles of Ship Propulsion (2011): manoeuvring speed "often 3.5-4.5 knots", midpoint
 
 behavior:
     tss_min_dist        : 800.0  # metres; normal separation inside tss

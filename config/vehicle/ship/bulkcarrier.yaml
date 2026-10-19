@@ -28,7 +28,8 @@ activity:
 
 maneuverability:
     max_yaw_rate        : 10.0   # degrees per timestep
-    max_speed           : 100    # speed per timestep
+    service_speed       : 7.46   # m/s (14.5 kn); source: MAN Energy Solutions, Propulsion trends in bulk carriers: design speed approx. 14.5 kn above 50,000 dwt
+    steerage_speed      : 2.06   # m/s (4 kn); source: MAN Diesel & Turbo, Basic Principles of Ship Propulsion (2011): manoeuvring speed "often 3.5-4.5 knots", midpoint
 
 behavior:
     # distance thresholds

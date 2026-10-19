@@ -29,7 +29,8 @@ activity:
 
 maneuverability:
     max_yaw_rate        : 10.0   # degrees per timestep
-    max_speed           : 100    # speed per timestep
+    service_speed       : 15.43  # m/s (30 kn); source: Princess F50 Mk1 (YachtBuyer): cruising 30 kn
+    max_speed           : 18.52  # m/s (36 kn); source: Princess F50 Mk1, twin IPS800 (YachtBuyer): top speed 36 kn
 
     max_heading_rate : 2.0    # degrees per timestep
 

@@ -29,7 +29,8 @@ activity:
 
 maneuverability:
     max_yaw_rate        : 10.0   # degrees per timestep
-    max_speed           : 100    # speed per timestep
+    service_speed       : 15.95  # m/s (31 kn); source: Botnia Targa 32, Volvo D4-300, broker listing: cruising 31 kn
+    max_speed           : 20.58  # m/s (40 kn); source: Botnia Targa 32, Volvo D4-300, broker listing: maximum 40 kn
 
 behavior:
     tss_min_dist     : 800.0  # metres; normal separation inside tss

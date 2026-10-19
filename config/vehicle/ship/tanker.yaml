@@ -28,7 +28,9 @@ activity:
 
 maneuverability:
     max_yaw_rate        : 10.0   # degrees per timestep
-    max_speed           : 100    # speed per timestep
+    service_speed       : 7.72   # m/s (15 kn); source: SEABRIDGE, 105,154 dwt double-hull Aframax (Nippon Foundation library): service speed 15.00 kn
+    max_speed           : 8.32   # m/s (16.17 kn); source: SEABRIDGE, 105,154 dwt Aframax: maximum trial speed 16.17 kn
+    steerage_speed      : 2.06   # m/s (4 kn); source: MAN Diesel & Turbo, Basic Principles of Ship Propulsion (2011): manoeuvring speed "often 3.5-4.5 knots", midpoint
 
 behavior:
     # distance thresholds

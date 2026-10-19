@@ -28,7 +28,9 @@ activity:
 
 maneuverability:
     max_yaw_rate        : 10.0   # degrees per timestep
-    max_speed           : 100    # speed per timestep
+    service_speed       : 7.72   # m/s (15 kn); source: 12,500 dwt multipurpose vessel, 140 m LPP, newbuild listing: service speed 15.0 kn at design draught
+    max_speed           : 8.23   # m/s (16 kn); source: Spliethoff E-type 12,500 dwt multipurpose vessels (TRID 455118): maximum speed 16 kn
+    steerage_speed      : 2.06   # m/s (4 kn); source: MAN Diesel & Turbo, Basic Principles of Ship Propulsion (2011): manoeuvring speed "often 3.5-4.5 knots", midpoint
 
 behavior:
     # distance thresholds

@@ -28,7 +28,8 @@ activity:
 
 maneuverability:
     max_yaw_rate        : 10.0   # degrees per timestep
-    max_speed           : 100    # speed per timestep
+    service_speed       : 10.03  # m/s (19.5 kn); source: Ship Universe, Big 5 breakdown: modern 174,000 m3 two-stroke LNG carrier at about 19.5 kn
+    steerage_speed      : 2.06   # m/s (4 kn); source: MAN Diesel & Turbo, Basic Principles of Ship Propulsion (2011): manoeuvring speed "often 3.5-4.5 knots", midpoint
 
 behavior:
     # distance thresholds

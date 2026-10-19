@@ -29,7 +29,8 @@ activity:
 
 maneuverability:
     max_yaw_rate        : 10.0   # degrees per timestep
-    max_speed           : 100    # speed per timestep
+    service_speed       : 7.46   # m/s (14.5 kn); source: Damen ASD Tug 3212 launch coverage (Marine Log, 2012): sailing speed 14.5 kn
+    max_speed           : 7.46   # m/s (14.5 kn); source: Damen ASD Tug 3212 (Marine Log, 2012): rated free sailing speed 14.5 kn
 
 behavior:
     tss_min_dist     : 800.0  # metres; normal separation inside tss
